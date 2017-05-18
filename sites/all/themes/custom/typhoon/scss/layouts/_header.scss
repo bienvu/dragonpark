@@ -1,0 +1,408 @@
+// Header.
+.admin-menu {
+  .header {
+    &__top {
+      top: 29px;
+    }
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 99;
+
+  &__top {
+    // display: flex;
+    // justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    z-index: 9;
+    top: -1px;
+    left: 0;
+    right: 0;
+    transition: .5s;
+
+    &.is-active {
+      .header {
+        &__logo {
+          @include susy-media(desktop) {
+            transition: .5s;
+          }
+
+          a {
+            @include susy-media(desktop) {
+              max-width: 150px;
+              transition: .5s;
+            }
+          }
+        }
+
+        &__menu {
+          @include susy-media(tablet) {
+            background-size: auto 370px;
+          }
+
+          @include susy-media(desktop-wide) {
+            padding-top: 125px;
+            background-size: 104% 390px;
+          }
+        }
+      }
+
+      .menu-icon {
+        @include susy-media(desktop-wide) {
+          width: 87px;
+          transition: .5s;
+        }
+      }
+    }
+  }
+
+  &__left,
+  &__right {
+    width: 30%;
+    position: absolute;
+    top: 0;
+    padding: 15px 0;
+  }
+
+  &__left {
+    left: 0;
+    width: 100%;
+
+    @include susy-media(mobileOnly) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+    }
+  }
+
+  &__right {
+    right: 0;
+    height: 30px;
+  }
+
+  &__icon-menu {
+
+    &:hover {
+      @include susy-media(1025px) {
+        .header {
+          &__menu {
+            transform: translate(0, 0);
+            transition: .5s;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-icon {
+    font-size: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 101px;
+    background: transparent url('../images/icon/icon-menu.png') no-repeat scroll 0 0 / 100% auto;
+    float: left;
+    z-index: 22;
+    position: relative;
+    transition: .5s;
+    width: 87px;
+  }
+
+  &__logo {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    transition: .5s;
+    width: 100%;
+    z-index: 1;
+    padding-top: 10px;
+
+    @include susy-media(tablet) {
+      width: 50%;
+    }
+
+    a {
+      display: inline-block;
+      transition: .5s;
+      position: relative;
+      width: 40%;
+      max-width: 100px;
+
+      @include susy-media(tablet) {
+        max-width: 125px;
+      }
+
+      @include susy-media(desktop) {
+        max-width: 160px;
+      }
+
+      @include susy-media(desktop-wide) {
+        max-width: 190px;
+      }
+    }
+  }
+
+  &__right {
+    display: none;
+
+    @include susy-media(tablet) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    background: #063F74 url('../images/bg-menu.png') no-repeat scroll right top / auto 100%;
+    left: 0;
+    opacity: 0;
+    padding-bottom: 10px;
+    padding-top: 90px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(0, -100%);
+    transition: .5s;
+    text-align: left;
+
+    @include susy-media(tablet) {
+      padding-bottom: 28px;
+      padding-top: 100px;
+      background-color: transparent;
+      background-size: auto 370px;
+    }
+
+    @include susy-media(desktop) {
+      background-size: 100% 370px;
+    }
+
+    @include susy-media(desktop-wide) {
+      background-size: 104% 420px;
+      padding-top: 142px;
+    }
+
+    &.is-active {
+      transform: translate(0, 0);
+      transition: .5s;
+      opacity: 1;
+      position: fixed;
+      bottom: 0;
+      overflow: auto;
+    }
+
+    .header {
+      &__social,
+      &__search {
+        padding: 0;
+        float: none;
+        clear: both;
+        margin-bottom: 15px;
+
+        @include susy-media(tablet) {
+          display: none;
+        }
+
+        li {
+          display: inline-block;
+          float: none;
+          font-size: 25px;
+          margin: 0 15px;
+          text-align: center;
+        }
+
+        .form-text {
+          margin-bottom: 0;
+          height: 35px;
+        }
+
+        .social-link {
+          float: none;
+        }
+
+        .form-actions::before {
+          line-height: 32px;
+        }
+      }
+
+      &__social {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .social-link {
+    display: inline-block;
+    float: right;
+    background: #172ba1;
+    border-radius: 20px;
+    padding: 5px 10px;
+
+    li {
+      float: left;
+
+      @include susy-media(tablet) {
+        margin: 0 7px;
+      }
+
+      @include susy-media(1025px) {
+        margin: 0 10px;
+      }
+
+      a {
+        color: $white;
+
+        @include susy-media(desktop-wide) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__search {
+    float: right;
+    position: relative;
+    text-align: left;
+  }
+
+  &__social {
+    float: right;
+    padding-right: 10px;
+    opacity: 1;
+    transition: .5s;
+    min-width: 170px;
+
+    &.is-active {
+      opacity: 0;
+      transition: .5s;
+    }
+
+    .bean-link a {
+      background: #ed1651 url("../images/icon/icon-ticket.png") no-repeat scroll 10px center;
+      border-radius: 20px;
+      color: #fff;
+      display: inline-block;
+      padding: 5px 10px 5px 50px;
+      text-transform: uppercase;
+      font-family: helvetica;
+
+      @include susy-media(desktop-wide) {
+        font-size: 14px;
+        line-height: 1;
+        padding: 12px 15px 8px 50px;
+      }
+    }
+  }
+
+  .block-locale {
+    @include susy-media(tablet) {
+      float: left;
+      margin-top: 3px;
+    }
+  }
+
+  .block-bean {
+    @include susy-media(tablet) {
+      float: right;
+      margin: 0 10px;
+    }
+  }
+
+  .language-switcher-locale-url {
+    @include susy-media(tablet) {
+      width: 25px;
+      height: 23px;
+      position: relative;
+    }
+
+    li {
+      @include susy-media(mobileOnly) {
+        margin: 0 3px 10px;
+        line-height: 1;
+      }
+
+      @include susy-media(tablet) {
+        line-height: 0 ;
+        margin-bottom: 5px;
+        visibility: hidden;
+        transition: .5s;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+      }
+
+      &.active {
+        @include susy-media(tablet) {
+          visibility: visible;
+          transition: .5s;
+          opacity: 1;
+          display: block;
+          top: 0;
+          z-index: 2;
+        }
+      }
+
+      &.en {
+        a {
+          background: url('../images/us.png') no-repeat scroll 0 0 transparent;
+        }
+      }
+
+      &.vi {
+        a {
+          background: url('../images/vi.png') no-repeat scroll 0 0 transparent;
+        }
+      }
+
+      a {
+        font-size: 0;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        line-height: 25px;
+        background-size: 100% auto !important;
+
+        @include susy-media(mobileOnly) {
+          border: 2px solid transparent;
+          border-radius: 100%;
+
+          &.active {
+            border-color: $white;
+          }
+        }
+
+        @include susy-media(tablet) {
+          width: 18px;
+          height: 18px; 
+          line-height: 18px;
+        }
+
+        @include susy-media(desktop-wide) {
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &.is-hover {
+      li {
+        @include susy-media(tablet) {
+          visibility: visible;
+          transition: .5s;
+          opacity: 1;
+          display: block;
+          top: 26px;
+          z-index: 1;
+
+          &.active {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+// Navigation.
+.navigation {
+  position: relative;
+
+  > .menu {
+    @extend %clearfix;
+
+    @include susy-media(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style-image: url('../images/dot.png');
+      font-size: 14px;
+      margin-bottom: 11px;
+    }
+
+    a {
+      color: $blue-79;
+      transition: .5s;
+      display: block;
+      position: relative;
+      z-index: 99;
+
+      &:hover {
+        color: $white;
+        transition: .5s;
+      }
+
+      &.is-active {
+        position: relative;
+        display: inline-block;
+
+        &:before {
+          background: rgb(254,222,53);
+          background: -moz-linear-gradient(top, rgba(254,222,53,1) 0%, rgba(245,143,71,1) 100%);
+          background: -webkit-linear-gradient(top, rgba(254,222,53,1) 0%,rgba(245,143,71,1) 100%);
+          background: linear-gradient(to bottom, rgba(254,222,53,1) 0%,rgba(245,143,71,1) 100%);
+          border-radius: 5px;
+          color: $white;
+          content: 'new';
+          display: inline-block;
+          font-size: 12px;
+          padding: 0 5px;
+          position: absolute;
+          right: -49px;
+          text-transform: uppercase;
+          top: 2px;
+        }
+      }
+    }
+
+    > li {
+      list-style: none;
+      margin-bottom: 0;
+
+      @include susy-media(tablet) {
+        width: 25%;
+        float: left;
+      }
+
+      ul {
+        padding-left: 17px;
+      }
+
+      > a {
+        @include UTMCookies;
+        color: $white;
+        display: block;
+        font-size: 18px;
+        line-height: 2;
+        margin-bottom: 10px;
+
+        @include susy-media(desktop) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .expanded {
+    @include susy-media(mobileOnly) {
+      position: relative;
+    }
+
+    .expand-icon {
+      display: none;
+
+      @include susy-media(mobileOnly) {
+        align-items:center;
+        color: $white;
+        cursor: pointer;
+        display: block;
+        display: flex;
+        font-size: 20px;
+        height: 36px;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 36px;
+      }
+    }
+
+    > ul {
+      display: none;
+
+      @include susy-media(tablet) {
+        display: block !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{% block blockAttractions %}
+  <div class="container">
+    <div class="box-service {{ content_class }}">
+      {% if title is not empty %}<h2 class="block-title">{{ title }}</h2>{% endif %}
+      <div class="box-service__list">
+        {% for item in content %}
+          <div class="box-service__item">
+            {% if item.content_image is not empty %}
+              <div class="box-service__image">
+                <img src="{{ item.content_image }}">
+              </div>
+            {% endif %}
+            <div class="box-service__content">
+              <h3 class="box-service__title">{{ item.content_title }}</h3>
+              <div class="box-service__body"><p>{{ item.content_body }}</p></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

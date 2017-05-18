@@ -1,0 +1,137 @@
+// Dragon map.
+.page-map,
+.page-how-to-get-there,
+.page-style {
+  .main-content {
+    padding-bottom: 0;
+  }
+
+  header {
+    z-index: 1000;
+  }
+
+  footer {
+    margin-top: -26px;
+    z-index: 999;
+  }
+
+  .admin-menu-position-fixed {
+    z-index: 12000;
+    position: fixed;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+#mapactivity {
+  height: 400px;
+
+  @include susy-media(tablet) {
+    height: 580px;
+  }
+}
+
+.box-dragon-map {
+  &__search {
+    @extend %clearfix;
+    margin-bottom: 30px;
+
+    .dropdown-toggle {
+      border-radius: 5px;
+      border: 1px solid $gray-9b;
+      height: 30px;
+      padding-bottom: 3px;
+      padding-top: 3px;
+      width: 100%;
+
+      .bs-caret {
+        background: none;
+        color: $gray-9b;
+
+        span:before {
+          color: $gray-9b;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .dropdown-menu.open {
+      border: 1px solid $gray-9b;
+      min-width: 230px;
+      top: 31px;
+
+      a:hover {
+        @include utmavo-bold;
+        background: $blue-17;
+        color: $white;
+      }
+    }
+
+    input {
+      border: 1px solid $gray-9b;
+      height: 30px;
+      margin-bottom: 0;
+      min-height: 30px;
+      padding: 3px 11px;
+    }
+
+    .form-item {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .form-type-select {
+      margin-bottom: 10px;
+
+      @include susy-media(550px) {
+        float: left;
+        margin-right: 30px;
+        width: 229px;
+        margin-bottom: 0;
+      }
+    }
+
+    .form-item-search-txt {
+      position: relative;
+
+      @include susy-media(550px) {
+        float: left;
+        width: 229px;
+      }
+    }
+
+    form {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+
+      @include susy-media(550px) {
+        width: auto;
+      }
+
+      .btn-search {
+        cursor: pointer;
+        font-size: 16px;
+        height: 30px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        border: 0;
+        font-size: 0;
+        text-indent: -999rem;
+        top: 0;
+        width: 35px;
+        min-width: inherit;
+        background: url('../images/search-icon.png') no-repeat scroll center center transparent;
+
+        @include susy-media(mobileOnly) {
+          top: inherit;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

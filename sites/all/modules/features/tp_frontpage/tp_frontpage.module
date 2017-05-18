@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TP Frontpage feature.
+ */
+
+include_once 'tp_frontpage.features.inc';

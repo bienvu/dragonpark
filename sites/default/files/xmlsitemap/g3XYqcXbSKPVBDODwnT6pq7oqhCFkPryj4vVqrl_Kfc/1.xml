@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="//typhoonpark.com/en/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://typhoonpark.com/en</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://typhoonpark.com/en/plan-your-visit</loc><lastmod>2017-04-27T08:49Z</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
+<url><loc>https://typhoonpark.com/en/event/event-example</loc><lastmod>2017-03-05T16:12Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/event/event-two</loc><lastmod>2017-03-05T16:12Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/tsunami</loc><lastmod>2017-04-26T17:14Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/event/halloween</loc><lastmod>2017-03-09T11:19Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/event/christmas-parade</loc><lastmod>2017-03-15T09:52Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/event/toys-house</loc><lastmod>2017-03-09T11:29Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/event/bubble-water</loc><lastmod>2017-03-25T02:47Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/event/looney-tunes-action</loc><lastmod>2017-03-12T16:39Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/next-events</loc><lastmod>2017-04-27T07:19Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://typhoonpark.com/en/about-us</loc><lastmod>2017-04-26T17:21Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/magical-cove</loc><lastmod>2017-04-27T03:28Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/vip-pool</loc><lastmod>2017-04-26T17:13Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/turbulence-rapids</loc><lastmod>2017-04-27T03:26Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/thunder-falls</loc><lastmod>2017-04-26T14:47Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/scenic-architecture/paradise-river</loc><lastmod>2017-04-04T05:07Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/scenic-architecture/pirates-route</loc><lastmod>2017-04-26T14:28Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/scenic-architecture/dragonback-falls</loc><lastmod>2017-04-27T03:42Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/services</loc><lastmod>2017-04-03T04:38Z</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/discovery-bay</loc><lastmod>2017-04-04T05:08Z</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/sun-pool</loc><lastmod>2017-04-27T03:49Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/tsunami-spillway</loc><lastmod>2017-04-26T17:17Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/childrens-musements/king-cobra</loc><lastmod>2017-04-26T10:43Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/privacy</loc><lastmod>2017-04-26T17:24Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/park-guides</loc><lastmod>2017-04-26T16:57Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://typhoonpark.com/en/explore-park</loc><lastmod>2017-04-27T07:19Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://typhoonpark.com/en/contact-us</loc><lastmod>2017-04-27T03:22Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/restaurants/longs-pool-bar</loc><lastmod>2017-04-26T17:27Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/explore-the-park/restaurants/pizza-cove</loc><lastmod>2017-04-26T17:28Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://typhoonpark.com/en/annual-pass</loc><lastmod>2017-04-27T07:57Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+</urlset>

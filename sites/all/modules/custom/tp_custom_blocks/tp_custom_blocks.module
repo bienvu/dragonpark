@@ -1,0 +1,277 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function tp_custom_blocks_menu() {
+  $items['find-location'] = array(
+    'title' => 'Find Location',
+    'page callback' => 'tp_map_find_location',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    'file' => 'tp_custom_blocks.inc',
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_block_info().
+ */
+function tp_custom_blocks_block_info() {
+  $blocks['faq'] = array(
+    'info' => t('Block FAQ'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['tp_direction'] = array(
+    'info' => t('Block direction'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['tp_map'] = array(
+    'info' => t('Block Map'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['tp_social'] = array(
+    'info' => t('Block Social'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['tp_map_position'] = array(
+    'info' => t('Block get position'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function tp_custom_blocks_block_view($delta = '') {
+  $block = array();
+  global $base_url;
+  switch ($delta) {
+    case 'faq':
+      drupal_add_js(drupal_get_path('module', 'tp_custom_blocks') . '/js/faq.js');
+      $ls_faq = _get_node_faq();
+      $block['subject'] = t('Block cars on front page');
+      $block['content'] = theme('faq', array('items' => $ls_faq));
+      break;
+
+    case 'tp_direction':
+      drupal_add_js(drupal_get_path('module', 'tp_custom_blocks') . '/js/tp_direction.js', array('weight' => 99));
+      drupal_add_css(drupal_get_path('module', 'tp_custom_blocks') . '/css/tp_direction.css');
+      $form = drupal_get_form('tp_custom_blocks_direction_form');
+      $block['subject'] = t('Block direction');
+      $block['content'] = theme('tp_direction', array('form' => $form));
+      break;
+
+    case 'tp_map':
+      drupal_add_js(drupal_get_path('module', 'tp_custom_blocks') . '/js/tp_map.js', array('weight' => 99));
+      drupal_add_css(drupal_get_path('module', 'tp_custom_blocks') . '/css/tp_direction.css');
+      $form = drupal_get_form('find_location_form');
+      $block['subject'] = t('Block direction');
+      $block['content'] = theme('tp_map', array('form' => $form));
+      break;
+
+    case 'tp_map_position':
+      drupal_add_js(drupal_get_path('module', 'tp_custom_blocks') . '/js/tp_map_position.js', array('weight' => 99));
+      drupal_add_css(drupal_get_path('module', 'tp_custom_blocks') . '/css/tp_direction.css');
+      $block['subject'] = t('Block find position');
+      $block['content'] = theme('tp_map_position');
+      break;
+
+    case 'tp_social':
+      $href = $base_url . '/' . current_path();
+      $block['subject'] = t('Block social');
+      $block['content'] = theme('tp_social', array('href' => $href));
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tp_custom_blocks_theme($existing, $type, $theme, $path) {
+  return array(
+    'faq' => array(
+      'template' => 'faq',
+      'variables' => array('items' => array()),
+    ),
+    'tp_direction' => array(
+      'template' => 'tp-direction',
+      'variables' => array('form' => NULL),
+    ),
+    'tp_map' => array(
+      'template' => 'tp-map',
+      'variables' => array('form' => NULL),
+    ),
+    'tp_map_position' => array(
+      'template' => 'tp-map-position',
+      'variables' => array(),
+    ),
+    'tp_social' => array(
+      'template' => 'tp-social',
+      'variables' => array('href' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function tp_custom_blocks_preprocess_faq(&$vars) {
+  $vars['faqs'] = array();
+  foreach ($vars['items'] as $key => $item) {
+    $vars['faqs'][$key]['question'] = $item->title;
+    $vars['faqs'][$key]['answer'] = $item->field_answer[LANGUAGE_NONE][0]['value'];
+  }
+}
+
+/**
+ * Function get node FAQs.
+ */
+function _get_node_faq() {
+  global $language;
+  $lang_code = $language->language;
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'faq')
+    ->propertyCondition('language', $lang_code)
+    ->propertyCondition('status', NODE_PUBLISHED);
+
+  $result = $query->execute();
+  $ls_faq = array();
+  if (isset($result['node'])) {
+    $news_items_nids = array_keys($result['node']);
+    $ls_faq = entity_load('node', $news_items_nids);
+  }
+  return $ls_faq;
+}
+
+/**
+ * Function build form search.
+ */
+function tp_custom_blocks_direction_form($form, &$form_state) {
+  $form['search_txt'] = array(
+    '#type' => 'textfield',
+    '#attributes' => array(
+      'placeholder' => t('Where are you from?'),
+      'name' => 'whereareyou',
+      'id' => 'input-whereareyou'
+    ),
+  );
+  $options = array(
+    'DRIVING' => t('Driving'),
+    'WALKING' => t('WALKING'),
+    'BICYCLING' => t('Bicycling'),
+    'TRANSIT' => t('Transit'),
+  );
+  $form['vehical'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#attributes' => array(
+      'placeholder' => t('Choose your vehicle'),
+      'name' => 'modemapdirect',
+      'id' => 'modemapdirect'
+    ),
+  );
+  $form['button'] = array(
+    '#type' => 'button',
+    '#value' => t('Direct'),
+    '#attributes' => array(
+      'class' => array('btn-direction', 'btn btn-map-direct btn--icon-direct btn--small'),
+    ),
+  );
+
+  return $form;
+}
+
+/**
+ * Function build form find location on map.
+ */
+function find_location_form($form, &$form_state) {
+  global $language;
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+  ->entityCondition('bundle', 'taxonomy')
+  ->propertyCondition('language', $language->language);
+  $result = $query->execute();
+  $news_items = array();
+  if (isset($result['taxonomy_term'])) {
+    $tids = array_keys($result['taxonomy_term']);
+    $news_items = entity_load('taxonomy_term', $tids);
+  }
+  $options = array('All' => t('Taxonomy'));
+  $options_attr = array();
+  foreach ($news_items as $term) {
+    if (!empty($term->field_icon)) {
+      $icon = $term->field_icon[LANGUAGE_NONE][0]['uri'];
+      $options_attr[$term->tid] = array('style' => 'background-image:url(' . file_create_url($icon) . '); background-repeat: no-repeat;');
+    }
+    $options[$term->tid] = $term->name;
+  }
+
+  $form['taxonomy'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#attributes' => array(
+      'id' => 'modemapdirect',
+      'name' => 'modemapdirect',
+      'class' => array('sl-taxonomy'),
+    ),
+    '#options_attributes' => $options_attr,
+  );
+
+  $form['search_txt'] = array(
+    '#type' => 'textfield',
+    '#attributes' => array(
+      'placeholder' => t('Search everything'),
+      'name' => 'filter_name',
+      'id' => 'input-search',
+      'class' => array('txt-keyword'),
+    ),
+  );
+
+  $form['button'] = array(
+    '#type' => 'button',
+    '#value' => t('Search'),
+    '#attributes' => array(
+      'class' => array('btn-search'),
+    ),
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function tp_custom_blocks_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'views_exposed_form') {
+    global $language;
+    $form['field_intensity_value_i18n']['#options']['All'] = t('Intensity');
+    $form['height']['#options']['All'] = t('Height');
+    $form['zone']['#options']['All'] = t('Zone');
+
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'taxonomy_term')
+    ->entityCondition('bundle', 'taxonomy')
+    ->propertyCondition('language', $language->language);
+    $result = $query->execute();
+    $news_items = array();
+    if (isset($result['taxonomy_term'])) {
+      $tids = array_keys($result['taxonomy_term']);
+      $news_items = entity_load('taxonomy_term', $tids);
+    }
+    $options = array('All' => t('Taxonomy'));
+    foreach ($news_items as $term) {
+      $options[$term->tid] = $term->name;
+    }
+    $form['taxonomy']['#options'] = $options;
+  }
+}

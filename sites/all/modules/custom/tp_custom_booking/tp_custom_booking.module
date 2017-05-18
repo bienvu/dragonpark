@@ -1,0 +1,128 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function tp_custom_booking_block_info() {
+  $blocks['booking'] = array(
+    'info' => t('Block booking'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function tp_custom_booking_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'booking':
+      $ticket_form = drupal_get_form('booking_ticket_form');
+      $hotel_form = drupal_get_form('booking_hotel_form');
+      $block['subject'] = t('Block cars on front page');
+      $block['content'] = theme('booking', array('ticket' => $ticket_form, 'hotel' => $hotel_form));
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tp_custom_booking_theme($existing, $type, $theme, $path) {
+  return array(
+    'booking' => array(
+      'template' => 'booking',
+      'variables' => array('ticket' => NULL, 'hotel' => NULL),
+    ),
+  );
+}
+
+/**
+ * Function build form book ticket.
+ */
+function booking_ticket_form($form, &$form_state) {
+  $option = array(0, 1, 2, 3, 4, 5);
+  $form['group_1'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_2'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_3'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_4'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_5'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_6'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+
+  $form['buy'] = array(
+    '#type' => 'submit',
+    '#value' => t('Buy tickets'),
+  );
+  return $form;
+}
+
+/**
+ * Function build form book ticket.
+ */
+function booking_hotel_form($form, &$form_state) {
+  $option = array(0, 1, 2, 3, 4, 5);
+  $form['group_1'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_2'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_3'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_4'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_5'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+  $form['group_6'] = array(
+    '#type' => 'select',
+    '#options' => $option,
+    '#title' => t('Individual'),
+  );
+
+  $form['buy'] = array(
+    '#type' => 'submit',
+    '#value' => t('Buy tickets'),
+  );
+  return $form;
+}

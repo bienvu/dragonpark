@@ -1,0 +1,5 @@
+name = TP Custom Calendar
+description = Create some Calendar function.
+core = 7.x
+package = Typhoon
+version = 7.x-1.0

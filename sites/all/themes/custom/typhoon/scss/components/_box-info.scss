@@ -1,0 +1,164 @@
+.box-info {
+  margin-bottom: 35px;
+  text-align: center;
+  color: $white;
+  font-size: 14px;
+
+  .title {
+    @include utmavo-bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+  }
+
+  &__zone {
+    margin-bottom: 37px;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__deal {
+    margin-bottom: 23px;
+
+    .title {
+      margin-bottom: 18px;
+    }
+
+    ul {
+      border: 1px solid $gray-de;
+      overflow: hidden;
+      border-radius: 3px;
+      display: inline-block;
+      display: flex;
+      display: block\9;
+    }
+
+    li {
+      display: inline-block;
+      min-width: 82px;
+      min-height: 88px;
+      border-right: 1px solid $gray-de;
+      padding-top: 62px;
+      font-size: 11px;
+      width: 33%;
+      min-width: 61px\9;
+      float: left\9;
+
+      @include susy-media(480px) {
+        min-width: 95px;
+        min-width: 61px\9;
+      }
+
+      @include susy-media(768px) {
+        min-width: 61px;
+        min-width: 61px\9;
+      }
+
+      @include susy-media(960px) {
+        min-width: 82px;
+        min-width: 61px\9;
+      }
+
+      @include susy-media(1200px) {
+        min-width: 95px;
+        min-width: 61px\9;
+      }
+
+      &.preformance {
+        background: url('../images/performance-icon.png') no-repeat scroll center 15px transparent;
+      }
+
+      &.family {
+        background: url('../images/family-icon.png') no-repeat scroll center 15px transparent;
+      }
+
+      &.person {
+        background: url('../images/person-icon.png') no-repeat scroll center 15px transparent;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  &__turn {
+    margin-bottom: 45px;
+
+    .title {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__icon {
+    font-size: 47px;
+    margin-bottom: 6px;
+    color: $orange-fb;
+  }
+
+  &__date-time {
+    margin-bottom: 23px;
+
+    .day {
+      @include utmavo-bold;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .time {
+      font-size: 30px;
+      line-height: 1;
+      color: $orange-fb;
+
+      @include susy-media(dekstop) {
+        font-size: 40px;
+      }
+
+      span {
+        color: #f86b46;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__message {
+    margin-bottom: 10px;
+
+    .title {
+      margin-bottom: 4px;
+      color: $orange-fb;
+    }
+  }
+
+  &__datetime {
+    .date {
+      margin-bottom: 20px;
+    }
+
+    .time {
+      display: inline-block;
+    }
+  }
+
+  &__buy-ticket {
+    margin-top: 40px;
+  }
+}

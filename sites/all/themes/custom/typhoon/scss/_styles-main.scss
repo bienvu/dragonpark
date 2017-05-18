@@ -1,0 +1,83 @@
+// STYLES-MAIN.SCSS
+
+// Please centralize all includes here.
+
+// WARNING: DO NOT EDIT /assets/css/styles.css file manually, this should be generated only by compiler based on this file.
+
+
+//Required imports
+@import '../.npm/bower_components/susy/sass/susy';
+
+
+//Helpers
+@import 'helpers/extends';
+@import 'helpers/functions';
+@import 'helpers/mixins';
+
+// Reset
+@import 'base/reset';
+
+//Base
+@import 'base/variables';
+@import 'base/colors';
+@import 'base/fonts';
+@import 'base/grid';
+@import 'base/typography';
+@import 'base/btn';
+@import 'base/form';
+
+// Helper classes
+@import 'helpers/helpers';
+
+// Layouts
+@import 'layouts/layout';
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/navigation';
+
+// Vendors
+@import 'vendors/slick';
+@import 'vendors/fancybox';
+@import 'vendors/select';
+
+
+// Components
+@import 'components/box-content';
+@import 'components/box-navigation';
+@import 'components/breadcrumb';
+@import 'components/box-attractions';
+@import 'components/box-share';
+@import 'components/box-info';
+@import 'components/box-contact';
+@import 'components/box-menu';
+@import 'components/box-accordion';
+@import 'components/box-service';
+@import 'components/box-hero';
+@import 'components/box-restaurent';
+@import 'components/box-gallery';
+@import 'components/box-hero-video';
+@import 'components/box-tabs';
+@import 'components/box-gmap';
+@import 'components/box-schedule';
+@import 'components/box-image-attraction';
+@import 'components/box-image';
+@import 'components/box-weather';
+@import 'components/box-hero-slide';
+@import 'components/box-price';
+@import 'components/box-calendar';
+@import 'components/box-how-to-get-there';
+@import 'components/box-map';
+@import 'components/box-search';
+@import 'components/box-explore';
+@import 'components/box-grid-service';
+@import 'components/box-guide-park';
+@import 'components/box-intro';
+
+// Pages
+@import 'pages/index';
+
+// Animation
+@import 'animations/animate';
+@import 'animations/animations-class';
+@import 'animations/animations-Ja';
+@import 'vendors/fix-ie';

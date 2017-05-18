@@ -1,0 +1,35 @@
+.box-menu {
+  text-align: center;
+
+  &__title,
+  h2 {
+    @extend .block-title;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 1px;
+  }
+
+  ul {
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 0 28px;
+
+    li {
+      border-bottom: 1px dashed $gray-dd;
+      padding: 6px 0;
+
+      a {
+        color: $text-color;
+        text-transform: capitalize;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

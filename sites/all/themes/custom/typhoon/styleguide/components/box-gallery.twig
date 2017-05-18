@@ -1,0 +1,42 @@
+{% block boxGallery %}
+  <div class="box-gallery" id="demo">
+    {% for i in 0..4 %}
+      <div class="box-gallery__item">
+        <a href="../images/image-demo/gallery1-large.jpg" data-fancybox="images"></a>
+        <div class="box-gallery__image">
+            <img class="lazy" src="../images/image-demo/gallery1.jpg" />
+        </div>
+        <div class="box-gallery__content">
+          <h3>title</h3>
+          <div class="tag">#water Park</div>
+          <a class="social"><i class="fa fa-facebook"></i></a>
+          <a class="link">View</a>
+        </div>
+      </div>
+      <div class="box-gallery__item">
+        <a href="../images/image-demo/gallery2-large.jpg" data-fancybox="images"></a>
+        <div class="box-gallery__image">
+            <img class="lazy" src="../images/image-demo/gallery2.jpg" />
+        </div>
+        <div class="box-gallery__content">
+          <h3>title</h3>
+          <div class="tag">#water Park</div>
+          <a class="social"><i class="fa fa-facebook"></i></a>
+          <a class="link">View</a>
+          </div>
+      </div>
+      <div class="box-gallery__item">
+        <a href="../images/image-demo/gallery3-large.jpg" data-fancybox="images"></a>
+        <div class="box-gallery__image">
+            <img class="lazy" src="../images/image-demo/gallery3.jpg" />
+        </div>
+        <div class="box-gallery__content">
+          <h3>title</h3>
+          <div class="tag">#water Park</div>
+          <a class="social"><i class="fa fa-facebook"></i></a>
+          <a class="link">View</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

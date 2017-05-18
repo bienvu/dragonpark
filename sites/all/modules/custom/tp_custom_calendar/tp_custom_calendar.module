@@ -1,0 +1,339 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function tp_custom_calendar_menu() {
+  $items['month/next/%ctools_js/%'] = array(
+    'page callback' => 'tp_custom_calendar_next_month',
+    'page arguments' => array(2, 3),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['month/prev/%ctools_js/%'] = array(
+    'page callback' => 'tp_custom_calendar_prev_month',
+    'page arguments' => array(2, 3),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['day/%ctools_js/%'] = array(
+    'page callback' => 'tp_custom_calendar_filter_day',
+    'page arguments' => array(1, 2),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function tp_custom_calendar_block_info() {
+  $blocks['tp_calendar'] = array(
+    'info' => t('Block Calendar'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['opening_hour'] = array(
+    'info' => t('Block opening hour'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function tp_custom_calendar_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'tp_calendar':
+      drupal_add_library('system', 'drupal.ajax');
+      drupal_add_js(drupal_get_path('module', 'tp_custom_calendar') . '/js/tp_calendar.js');
+      $next = date('Y-m',strtotime('+2 month'));
+      $prev = date('Y-m',strtotime('-1 month'));
+      $low_month = views_embed_view('events', 'calendar_low_month');
+      $high_month = views_embed_view('events', 'calendar_high_month');
+      $block['subject'] = t('Typhoon Calendar');
+      $block['content'] = theme('tp_calendar', array(
+        'low_month' => $low_month,
+        'high_month' => $high_month,
+        'next' => $next,
+        'prev' => $prev,
+        )
+      );
+      break;
+
+    case 'opening_hour':
+      $day = date('d M Y');
+      $time = _get_opening_by_day($day);
+      $opening = t('Parking at the front door will open 30 minutes');
+      $closing = t('All games will be closed 30 minutes ago');
+      $block['content'] = theme('opening_hour', array(
+        'day' => $day,
+        'time' => $time,
+        'opening' => $opening,
+        'closing' => $closing,
+        )
+      );
+
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tp_custom_calendar_theme($existing, $type, $theme, $path) {
+  return array(
+    'tp_calendar' => array(
+      'template' => 'tp-calendar',
+      'variables' => array('low_month', 'high_month', 'next', 'prev'),
+    ),
+    'opening_hour' => array(
+      'template' => 'opening-hour',
+      'variables' => array('day', 'time', 'opening', 'closing'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function tp_custom_calendar_preprocess_tp_calendar(&$vars) {
+  $vars['link_next'] = l(t('Next'), 'month/next/nojs/' . $vars['next'], array('attributes' => array('class' => 'use-ajax')));
+  $vars['link_prev'] = l(t('Previous'), 'month/prev/nojs/' . $vars['prev'], array('attributes' => array('class' => 'use-ajax')));
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function tp_custom_calendar_preprocess_opening_hour(&$vars) {
+  $node = $vars['time'];
+  $vars['price'] = 0;
+  if (!empty($node)) {
+    $day = strtotime($vars['day']);
+    $weekday = date('w', strtotime($day));
+    $node_wp = entity_metadata_wrapper('node', $node);
+    $other = array();
+    $prices = array();
+    foreach ($node_wp->field_other_opening->getIterator() as $key => $item) {
+      $other[$item->field_date->value()] = $item->field_day_off->value();
+      $prices[$item->field_date->value()] = $item->field_price->value();
+    }
+
+    if (isset($other[$day])) {
+      $vars['time'] = $other[$day];
+      $vars['price'] = $prices[$day];
+    }
+    elseif ($weekday == 0 || $weekday == 6) {
+      $vars['time'] = $node_wp->field_day_off->value();
+      $vars['price'] = $node_wp->field_day_off_price->value();
+    }
+    else {
+      $vars['time'] = $node_wp->field_weekday->value();
+      $vars['price'] = $node_wp->field_weekday_price->value();
+    }
+  }
+  else {
+    $vars['time'] = NULL;
+  }
+}
+
+/**
+ * Implements template_preprocess_calendar_datebox()
+ */
+function tp_custom_calendar_preprocess_calendar_datebox(&$vars) {
+  //Add link ajax callback when user click on date has event
+  $vars['selected'] = TRUE;
+  $date = $vars['date'];
+  $opening = _get_opening_by_day($date);
+  $tmp = array();
+  if (!empty($opening->field_closing_day)) {
+    $closing = $opening->field_closing_day[LANGUAGE_NONE];
+    foreach ($closing as $item) {
+      $tmp[] = $item['value'];
+    }
+  }
+  $other = array();
+  if (!empty($opening)) {
+    $node_wp = entity_metadata_wrapper('node', $opening);
+    foreach ($node_wp->field_other_opening->getIterator() as $key => $item) {
+      $other[] = $item->field_date->value();
+    }
+  }
+  $vars['day'] = substr($date, 8, 2);
+  $vars['link'] = l($vars['day'], 'day/nojs/' . $date, array('attributes' => array('class' => 'use-ajax')));
+  if (!empty($other) && in_array(strtotime($date), $other)) {
+    $vars['class'] = 'mini-day-off special-day';
+  }
+  if (in_array(strtotime($date), $tmp)) {
+    $vars['class'] = 'mini-day-off closing-day';
+  }
+}
+
+
+/**
+ * Function next month.
+ */
+function tp_custom_calendar_next_month($ajax, $month) {
+  if ($ajax) {
+    // Render calendar.
+    $month = strtotime($month);
+    $low = date("Y-m", $month);
+    $high = date("Y-m", strtotime("+1 month", $month));
+    $low_month = views_embed_view('events', 'calendar_low_month', $low);
+    $high_month = views_embed_view('events', 'calendar_high_month', $high);
+    // Render next link & prev link.
+    $next = date("Y-m", strtotime("+2 month", $month));
+    $prev = date("Y-m", strtotime("-1 month", $month));
+    $link_next = l(t('Next'), 'month/next/nojs/' . $next, array('attributes' => array('class' => 'use-ajax')));
+    $link_prev = l(t('Previous'), 'month/prev/nojs/' . $prev, array('attributes' => array('class' => 'use-ajax')));
+    // Using ajax command to replace HTML.
+    $commands = array();
+    $commands[] = ajax_command_html('.month', $low_month);
+    $commands[] = ajax_command_html('.month-next', $high_month);
+    $commands[] = ajax_command_html('.link-next', $link_next);
+    $commands[] = ajax_command_html('.link-prev', $link_prev);
+
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
+  }
+  else {
+    drupal_access_denied();
+  }
+}
+
+/**
+ * Function previous month.
+ */
+function tp_custom_calendar_prev_month($ajax, $month) {
+  if ($ajax) {
+    // Render calendar.
+    $month = strtotime($month);
+    $high = date("Y-m", $month);
+    $low = date("Y-m", strtotime("-1 month", $month));
+    $month_high = views_embed_view('events', 'calendar_low_month', $high);
+    $month_low = views_embed_view('events', 'calendar_high_month', $low);
+    // Render next link & prev link.
+    $next = date("Y-m", strtotime("+1 month", $month));
+    $prev = date("Y-m", strtotime("-2 month", $month));
+    $link_next = l(t('Next'), 'month/next/nojs/' . $next, array('attributes' => array('class' => 'use-ajax')));
+    $link_prev = l(t('Previous'), 'month/prev/nojs/' . $prev, array('attributes' => array('class' => 'use-ajax')));
+    // Using ajax command to replace HTML.
+    $commands = array();
+    $commands[] = ajax_command_html('.month', $month_low);
+    $commands[] = ajax_command_html('.month-next', $month_high);
+    $commands[] = ajax_command_html('.link-next', $link_next);
+    $commands[] = ajax_command_html('.link-prev', $link_prev);
+
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
+  }
+  else {
+    drupal_access_denied();
+  }
+}
+
+/**
+ * Function callback when click on each day.
+ */
+function tp_custom_calendar_filter_day($ajax, $day) {
+  if ($ajax) {
+    $node = _get_opening_by_day($day);
+    $time = NULL;
+    $day = strtotime($day);
+    // Opening times.
+    $weekday = date('w', $day);
+    $price = 0;
+    if (!empty($node)) {
+      $node_wp = entity_metadata_wrapper('node', $node);
+      $other = array();
+      $prices = array();
+      foreach ($node_wp->field_other_opening->getIterator() as $key => $item) {
+        $other[$item->field_date->value()] = $item->field_day_off->value();
+        $prices[$item->field_date->value()] = $item->field_price->value();
+      }
+      if (isset($other[$day])) {
+        $time = $other[$day];
+        $price = $prices[$day];
+      }
+      elseif ($weekday == 0 || $weekday == 6) {
+        $time = $node_wp->field_day_off->value();
+        $price = $node_wp->field_day_off_price->value();
+      }
+      else {
+        $time = $node_wp->field_weekday->value();
+        $price = $node_wp->field_weekday_price->value();
+      }
+
+      $tmp = array();
+      if (!empty($node->field_closing_day)) {
+        $closing = $node->field_closing_day[LANGUAGE_NONE];
+        foreach ($closing as $item) {
+          $tmp[] = $item['value'];
+        }
+      }
+      if (in_array($day, $tmp)) {
+        $time = '<span>' . t('Closing') . '</span>';
+      }
+    }
+    $output = '<div class="day">' . date('d M Y', $day) . '</div>';
+    $output .= '<div class="time">' . $time . '</div>';
+    $output_price = t('Price <span>@price</span> VNĐ', array('@price' => $price));
+    // Event in day.
+    $day = date('Y-m-d', $day);
+    $events = views_embed_view('events', 'event_by_day', $day);
+    // Using ajax command to replace HTML.
+    $commands = array();
+    $commands[] = ajax_command_html('.box-info__date-time', $output);
+    $commands[] = ajax_command_html('.box-info__price', $output_price);
+    $commands[] = ajax_command_html('.pane-events .pane-content', $events);
+
+    $page = array('#type' => 'ajax', '#commands' => $commands);
+    ajax_deliver($page);
+  }
+  else {
+    drupal_access_denied();
+  }
+}
+
+/**
+ * Query to get opening hour by day.
+ *
+ * @param $day
+ *
+ * @return $node
+ *
+ */
+function _get_opening_by_day($day) {
+  $day = strtotime($day);
+  $month = date('Y-m', $day);
+  $month = strtotime($month);
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'opening_hour')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_month', 'value', $month)
+    ->range(0, 1);
+
+  $result = $query->execute();
+  $news_items = array();
+  if (isset($result['node'])) {
+    $news_items_nids = array_keys($result['node']);
+    $news_items = entity_load('node', $news_items_nids);
+  }
+  if (!empty($news_items)) {
+    return reset($news_items);
+  }
+  else {
+    return $news_items;
+  }
+}

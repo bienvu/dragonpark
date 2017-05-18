@@ -1,0 +1,26 @@
+{% block blockAttractions %}
+  <div class="container">
+    <div class="box-attractions {{ content_class }}">
+      {% if title is not empty %}<h2 class="block-title"><span>{{ title }}<span class="content-number">(10)</span></span></h2>{% endif %}
+      <div class="box-attractions__list">
+        {% for item in content %}
+          <div class="box-attractions__item">
+            {% if item.content_image is not empty %}
+              <div class="box-attractions__image">
+                <a href="attraction-detail.html"><img src="{{ item.content_image }}"></a>
+                <ul class="box-attractions__info">
+                  <li class="height">{{ item.content_height }}</li>
+                  <li class="target">{{ item.content_target }}</li>
+                </ul>
+              </div>
+            {% endif %}
+            <div class="box-attractions__content">
+              <h3 class="box-attractions__title"><a href="attraction-detail.html">{{ item.content_title }}</a></h3>
+              <div class="box-attractions__body"><p>{{ item.content_body }}</p></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

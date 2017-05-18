@@ -1,0 +1,241 @@
+.pane-bean-hero-slide-home-page {
+  .box-hero-slide {
+    @include susy-media(mobileOnly) {
+      height: 300px;
+    }
+
+    @include susy-media(tabletOnly) {
+      height: 450px;
+    }
+
+    @include susy-media(tablet) {
+      height: 650px;
+    }
+
+    @include susy-media(desktop) {
+    height: calc(100vw/2.4);
+  }
+
+    &__title {
+      color: $white;
+      font-size: 95px;
+      line-height: 80px;
+      max-width: 380px;
+      margin: 0 auto 22px;
+      letter-spacing: 1px;
+    }
+
+    &__image,
+    &__video {
+      position: relative;
+
+      &:before {
+        background: rgba($black, .1); 
+      }
+    }
+  }
+}
+// Video feature
+.box-hero-slide {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  @include susy-media(mobileOnly) {
+    height: 300px;
+  }
+
+  @include susy-media(tabletOnly) {
+    height: 450px;
+  }
+
+  @include susy-media(tablet) {
+    height: calc(100vw/2.4);
+  }
+
+  &__small-title {
+    @include SanFranciscoDisplay-Regular;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+
+  .slick-list,
+  .slick-track,
+  .box-hero-slide__image {
+    height: 100%;
+    position: relative;
+
+    img {
+      height: 100%;
+      left: 50%;
+      max-width: inherit;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      //-ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: auto;
+      top: 0\9;
+      left: 0\9;
+      transform: translate(0, 0)\9;
+
+      @include susy-media(460px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__image,
+  &__video {
+    position: relative;
+
+    &:before {
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: rgba($black, .4); 
+      z-index: 1;
+    }
+  }
+
+  &__video {
+    @extend %responsive-video;
+    background: url('../images/bg-image-video.jpg') scroll no-repeat 0 0 transparent;
+    background-size: auto 100%;
+
+    @include susy-media(desktop) {
+      background-size: 100% auto;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    bottom: 0;
+    color: $white;
+    display: table;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+
+    &__inner {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      padding-top: 40px;
+
+      @include susy-media(tablet) {
+        padding-top: 60px;
+        padding: 0 30px;
+      }
+
+      @include susy-media(desktop) {
+        padding: 0 12%;
+      }
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: none;
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: rgba(#000, .3);
+      border: 1px solid $white;
+      border-radius: 4px;
+      padding: 11px 20px;
+      letter-spacing: 1px;
+
+      @include susy-media(tablet) {
+        display: inline-block;
+      }
+    }
+
+    .play-video {
+      display: none;
+      position: relative;
+      //display: inline-block;
+
+      &:before {
+        @include susy-media(tablet) {
+          display: none;
+        }
+
+        content:"\f28c";
+        display: inline-block;
+        z-index: 9;
+        font-family: "FontAwesome";
+        font-size: 45px;
+        color: $white;
+        opacity: .8;
+        cursor: pointer;
+      }
+
+      &.pause:before {
+        content:"\f01d";
+      }
+    }
+  }
+
+  &__title {
+    @include UVNAnhSang;
+    color: $white;
+    font-size: 50px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    @include susy-media(tablet) {
+      font-size: 60px;
+    }
+
+    @include susy-media(desktop) {
+      font-size: 95px;
+      line-height: 80px;
+    }
+  }
+
+  &__body {
+    font-size: 15px;
+    margin-bottom: 13px;
+    text-transform: uppercase;
+
+    @include susy-media(tablet) {
+      font-size: 18px;
+    }
+  }
+
+  .slick-dots {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    right: inherit;
+    top: inherit;
+    transform: translate(-50% , 0);
+    transform: translate(0 , 0)\9;
+
+    @include susy-media(tablet) {
+      bottom: 20px;
+      transform: translate(-50% , -50%);
+      transform: translate(0, 0)\9;
+      margin-left: -15px\9;
+    }
+  }
+}
+
+video::-webkit-media-controls-fullscreen-button,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-pausebutton {
+  display: none !important;
+}

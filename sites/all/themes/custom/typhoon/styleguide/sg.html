@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Typhoon styleguide -</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="../css/jquery.flex-images.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=837227993036339";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <header class="header">
+    <div class="header__top">
+      <div class="header__left">
+        <div class="header__icon-menu">
+          <i class="menu-icon">icon</i>
+          <div class="header__menu">
+            <div class="container">
+              <div id="main-menu" class="navigation">
+                <ul class="menu">
+                  <li class="first expanded"><a href="expolore-the-park.html" title="">Explore the Park</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="attractions.html" title="" class="active">Attractions</a>
+                      </li>
+                      <li class="leaf"><a href="children.html" title="" class="active">Children’s músements</a>
+                      </li>
+                      <li class="leaf"><a href="scenic.html" title="" class="active">Scenic Ảchitecture</a>
+                      </li>
+                      <li class="leaf"><a href="retail.html" title="" class="active">Retails</a>
+                      </li>
+                      <li class="leaf"><a href="restaurent.html" title="" class="active">Restaurant</a>
+                      </li>
+                      <li class="last leaf"><a href="service.html" title="" class="active">Other services</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="expanded"><a href="plan-your-visit.html" title="" class="active">Plan your visit</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="/" title="" class="active">Opening Days</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">How to get to Typhoon</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">Guide park</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">Ticket Prices</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">Map</a>
+                      </li>
+                      <li class="last leaf"><a href="/" title="" class="active">Annual Pass</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="expanded"><a href="/" title="" class="active">Next Events</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="event-detail.html" title="" class="active">Annual Pass</a>
+                      </li>
+                      <li class="leaf"><a href="event-detail.html" title="" class="active">Halloween</a>
+                      </li>
+                      <li class="leaf"><a href="event-detail.html" title="" class="active">Looney tunes action</a>
+                      </li>
+                      <li class="leaf"><a href="event-detail.html" title="" class="active">Toys House</a>
+                      </li>
+                      <li class="last leaf"><a href="event-detail.html" title="" class="active">Bubble Water</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="last expanded"><a href="/" title="" class="active">About Typhoon</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="gallery.html" title="" class="active">Social Gallery</a>
+                      </li>
+                      <li class="leaf"><a href="about-us.html" title="" class="active">About Us</a>
+                      </li>
+                      <li class="leaf"><a href="contact-us.html" title="" class="active">Contact Us</a>
+                      </li>
+                      <li class="leaf"><a href="helps.html" title="" class="active">Helps</a>
+                      </li>
+                      <li class="last leaf"><a href="privacy.html" title="" class="active">Privacy</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- /#main-menu -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__logo">
+        <a href="home.html" title="Home" rel="home" id="logo">
+          <img src="../logo.png" alt="Home">
+        </a>
+      </div>
+      <!-- <div class="header__right">
+                <ul class="social-link">
+            <li><a href="#"><i class="fa fa-search"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div> -->
+      <div class="header__right">
+        <div class="header__language">
+          <ul>
+            <li><a class="us" href="#">us</a>
+            </li>
+            <li><a class="vi" href="#">vi</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__social">
+          <div class="region region-header-social">
+            <div class="region region-header-social">
+              <div class="block block-bean">
+                <div class="content">
+                  <div class="entity entity-bean bean-social box-social">
+                    <ul class="social-link">
+                      <li><a href="https://www.facebook.com/DragonParkHalong/?fref=ts" title="Facebook"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li><a href="https://twitter.com/DragonParkVN" title="Twitter"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      <li><a href="https://www.youtube.com/channel/UCJ15AYn1OR2VEOWN8GC8nmA" title="Youtube"><i class="fa fa-youtube"></i></a>
+                      </li>
+                      <li><a href="https://sundragonpark.com/ve-dragon-park/#" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                      </li>
+                      <li><a href="https://www.instagram.com/dragonpark_halong/" title="Instagram"><i class="fa fa-instagram"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__search">
+          <div class="region region-header-right">
+            <div class="block block-search">
+              <div class="content">
+                <form action="/" method="post" id="search-block-form" accept-charset="UTF-8">
+                  <div>
+                    <div class="container-inline">
+                      <h2 class="element-invisible">Search form</h2>
+                      <div class="form-item form-type-textfield form-item-search-block-form">
+                        <label class="element-invisible" for="edit-search-block-form--2">Search</label>
+                        <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+                      </div>
+                      <div class="form-actions form-wrapper" id="edit-actions">
+                        <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+                      </div>
+                      <input type="hidden" name="form_build_id" value="form-8M0TBoKmMXWrCk4eDA3gS4WNqVXreL3BXZ8HnS6cI0c">
+                      <input type="hidden" name="form_id" value="search_block_form">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header__bottom">
+      <div class="box-hero">
+        <div class="box-hero__image">
+          <img src="../images/image-demo/baby-play.jpg">
+        </div>
+        <h2 class="box-hero__title">Typhoon Water Park</h2>
+      </div>
+    </div>
+  </header>
+
+  <h1></h1>
+
+  <div class="component--item" id="box-grid-service">
+    <h2 class="component--title">box grid service <a href="http://dev-typhoon.pantheonsite.io/" target="_blank" class="small-tag" title="Open task"><i class="fa fa-external-link"></i></a></h2>
+    <div class="component--demo">
+      <div class="box-grid-service">
+        <div class="box-grid-service__item">
+          <div class="box-grid-service__image">
+            <img src="../images/service/service.jpg">
+          </div>
+          <div class="box-grid-service__content">
+            <div class="box-grid-service__description">
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <a href="#" class="btn">View more</a>
+          </div>
+          <div class="box-grid-service__icon">
+            <img src="../images/icon/food-drink.png">
+            <div class="title">Food and Drink</div>
+          </div>
+        </div>
+        <div class="box-grid-service__item">
+          <div class="box-grid-service__image">
+            <img src="../images/service/service2.jpg">
+          </div>
+          <div class="box-grid-service__content">
+            <div class="box-grid-service__description">
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <a href="#" class="btn">View more</a>
+          </div>
+          <div class="box-grid-service__icon">
+            <img src="../images/icon/retails.png">
+            <div class="title">Food and Drink</div>
+          </div>
+        </div>
+        <div class="box-grid-service__item">
+          <div class="box-grid-service__image">
+            <img src="../images/service/service3.jpg">
+          </div>
+          <div class="box-grid-service__content">
+            <div class="box-grid-service__description">
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <a href="#" class="btn">View more</a>
+          </div>
+          <div class="box-grid-service__icon">
+            <img src="../images/icon/atm.png">
+            <div class="title">Food and Drink</div>
+          </div>
+        </div>
+        <div class="box-grid-service__item">
+          <div class="box-grid-service__image">
+            <img src="../images/service/service4.jpg">
+          </div>
+          <div class="box-grid-service__content">
+            <div class="box-grid-service__description">
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <a href="#" class="btn">View more</a>
+          </div>
+          <div class="box-grid-service__icon">
+            <img src="../images/icon/icon-firstAid.png">
+            <div class="title">Food and Drink</div>
+          </div>
+        </div>
+        <div class="box-grid-service__item">
+          <div class="box-grid-service__image">
+            <img src="../images/service/service1.jpg">
+          </div>
+          <div class="box-grid-service__content">
+            <div class="box-grid-service__description">
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <a href="#" class="btn">View more</a>
+          </div>
+          <div class="box-grid-service__icon">
+            <img src="../images/icon/icon-shirt.png">
+            <div class="title">Food and Drink</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="container">
+      <button class="show-code">Show/Hide Code</button>
+      <div class="component--source element-invisible">
+        <div class="component--html">
+          <h4 class="component--source--title">Markup</h4>
+          <pre class="brush: php"><div class="box-grid-service">
+  <div class="box-grid-service__item">
+    <div class="box-grid-service__image">
+      <img src="../images/service/service.jpg">
+    </div>
+    <div class="box-grid-service__content">
+      <div class="box-grid-service__description">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+      <a href="#" class="btn">View more</a>
+    </div>
+    <div class="box-grid-service__icon">
+      <img src="../images/icon/food-drink.png">
+      <div class="title">Food and Drink</div>
+    </div>
+  </div>
+  <div class="box-grid-service__item">
+    <div class="box-grid-service__image">
+      <img src="../images/service/service2.jpg">
+    </div>
+    <div class="box-grid-service__content">
+      <div class="box-grid-service__description">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+      <a href="#" class="btn">View more</a>
+    </div>
+    <div class="box-grid-service__icon">
+      <img src="../images/icon/retails.png">
+      <div class="title">Food and Drink</div>
+    </div>
+  </div>
+  <div class="box-grid-service__item">
+    <div class="box-grid-service__image">
+      <img src="../images/service/service3.jpg">
+    </div>
+    <div class="box-grid-service__content">
+      <div class="box-grid-service__description">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+      <a href="#" class="btn">View more</a>
+    </div>
+    <div class="box-grid-service__icon">
+      <img src="../images/icon/atm.png">
+      <div class="title">Food and Drink</div>
+    </div>
+  </div>
+  <div class="box-grid-service__item">
+    <div class="box-grid-service__image">
+      <img src="../images/service/service4.jpg">
+    </div>
+    <div class="box-grid-service__content">
+      <div class="box-grid-service__description">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+      <a href="#" class="btn">View more</a>
+    </div>
+    <div class="box-grid-service__icon">
+      <img src="../images/icon/icon-firstAid.png">
+      <div class="title">Food and Drink</div>
+    </div>
+  </div>
+  <div class="box-grid-service__item">
+    <div class="box-grid-service__image">
+      <img src="../images/service/service1.jpg">
+    </div>
+    <div class="box-grid-service__content">
+      <div class="box-grid-service__description">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+      <a href="#" class="btn">View more</a>
+    </div>
+    <div class="box-grid-service__icon">
+      <img src="../images/icon/icon-shirt.png">
+      <div class="title">Food and Drink</div>
+    </div>
+  </div>
+
+</div>
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="component--item" id="box-explore">
+    <h2 class="component--title">box explore <a href="http://dev-typhoon.pantheonsite.io/" target="_blank" class="small-tag" title="Open task"><i class="fa fa-external-link"></i></a></h2>
+    <div class="component--demo">
+      <div class="box-explore">
+        <div class="box-explore__image">
+          <ul class="js-full-slide">
+            <li>
+              <img src="../images/slide/slide1.jpg">
+            </li>
+            <li>
+              <img src="../images/slide/slide2.jpg">
+            </li>
+            <li>
+              <img src="../images/slide/slide3.jpg">
+            </li>
+            <li>
+              <img src="../images/slide/slide1.jpg">
+            </li>
+            <li>
+              <img src="../images/slide/slide2.jpg">
+            </li>
+            <li>
+              <img src="../images/slide/slide3.jpg">
+            </li>
+            <li>
+              <img src="../images/slide/slide1.jpg">
+            </li>
+            <li>
+              <img src="../images/slide/slide3.jpg">
+            </li>
+          </ul>
+        </div>
+        <div class="box-explore__content">
+          <div class="box-explore__content__inner">
+            <ul class="box-explore__list">
+              <li class="active">
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore</span></span>
+              </li>
+              <li>
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore 2</span></span>
+              </li>
+              <li>
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore 3</span></span>
+              </li>
+              <li>
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore 4</span></span>
+              </li>
+              <li>
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore 5</span></span>
+              </li>
+              <li>
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore 6</span></span>
+              </li>
+              <li>
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore 7</span></span>
+              </li>
+              <li>
+                <span class="image"><img src="../images/icon/icon1.png"></span>
+                <span class="text"><span>Explore 8</span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <button class="show-code">Show/Hide Code</button>
+      <div class="component--source element-invisible">
+        <div class="component--html">
+          <h4 class="component--source--title">Markup</h4>
+          <pre class="brush: php"><div class="box-explore">
+  <div class="box-explore__image">
+    <ul class="js-full-slide">
+      <li><img src="../images/slide/slide1.jpg"></li>
+      <li><img src="../images/slide/slide2.jpg"></li>
+      <li><img src="../images/slide/slide3.jpg"></li>
+      <li><img src="../images/slide/slide1.jpg"></li>
+      <li><img src="../images/slide/slide2.jpg"></li>
+      <li><img src="../images/slide/slide3.jpg"></li>
+      <li><img src="../images/slide/slide1.jpg"></li>
+      <li><img src="../images/slide/slide3.jpg"></li>
+    </ul>
+  </div>
+  <div class="box-explore__content">
+    <div class="box-explore__content__inner">
+      <ul class="box-explore__list">
+        <li class="active">
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore</span></span>
+        </li>
+        <li>
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore 2</span></span>
+        </li>
+        <li>
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore 3</span></span>
+        </li>
+        <li>
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore 4</span></span>
+        </li>
+        <li>
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore 5</span></span>
+        </li>
+        <li>
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore 6</span></span>
+        </li>
+        <li>
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore 7</span></span>
+        </li>
+        <li>
+          <span class="image"><img src="../images/icon/icon1.png"></span>
+          <span class="text"><span>Explore 8</span></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer__bg"></div>
+    <div class="footer__top clearfix">
+      <div class="container">
+        <div id="main-menu" class="navigation">
+          <ul class="menu">
+            <li class="first expanded"><a href="expolore-the-park.html" title="">Explore the Park</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="attractions.html" title="" class="active">Attractions</a>
+                </li>
+                <li class="leaf"><a href="children.html" title="" class="active">Children’s músements</a>
+                </li>
+                <li class="leaf"><a href="scenic.html" title="" class="active">Scenic Ảchitecture</a>
+                </li>
+                <li class="leaf"><a href="retail.html" title="" class="active">Retails</a>
+                </li>
+                <li class="leaf"><a href="restaurent.html" title="" class="active">Restaurant</a>
+                </li>
+                <li class="last leaf"><a href="service.html" title="" class="active">Other services</a>
+                </li>
+              </ul>
+            </li>
+            <li class="expanded"><a href="plan-your-visit.html" title="" class="active">Plan your visit</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="/" title="" class="active">Opening Days</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">How to get to Typhoon</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">Guide park</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">Ticket Prices</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">Map</a>
+                </li>
+                <li class="last leaf"><a href="/" title="" class="active">Annual Pass</a>
+                </li>
+              </ul>
+            </li>
+            <li class="expanded"><a href="/" title="" class="active">Next Events</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="event-detail.html" title="" class="active">Annual Pass</a>
+                </li>
+                <li class="leaf"><a href="event-detail.html" title="" class="active">Halloween</a>
+                </li>
+                <li class="leaf"><a href="event-detail.html" title="" class="active">Looney tunes action</a>
+                </li>
+                <li class="leaf"><a href="event-detail.html" title="" class="active">Toys House</a>
+                </li>
+                <li class="last leaf"><a href="event-detail.html" title="" class="active">Bubble Water</a>
+                </li>
+              </ul>
+            </li>
+            <li class="last expanded"><a href="/" title="" class="active">About Typhoon</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="gallery.html" title="" class="active">Social Gallery</a>
+                </li>
+                <li class="leaf"><a href="about-us.html" title="" class="active">About Us</a>
+                </li>
+                <li class="leaf"><a href="contact-us.html" title="" class="active">Contact Us</a>
+                </li>
+                <li class="leaf"><a href="helps.html" title="" class="active">Helps</a>
+                </li>
+                <li class="last leaf"><a href="privacy.html" title="" class="active">Privacy</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /#main-menu -->
+      </div>
+    </div>
+    </div>
+    <div class="footer__bottom clearfix">
+      <div class="container">
+        <div class="region region-footer">
+          <div id="block-block-1" class="block block-block contextual-links-region">
+            <div class="content">
+              <p>&copy; 2017 Typhoon Water Park. All rights reserved. Designed by Apecsoft</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /#footer -->
+    <div class="block-help">
+      <a href="helps.html">Help</a>
+    </div>
+    <div class="block-back-to-top js-back-to-top"><a href="#">back to top</a>
+    </div>
+  </footer>
+  <script src="script/jquery.min.js"></script>
+  <script src="../js/lib/media.match.min.js"></script>
+  <script src="../js/lib/enquire.min.js"></script>
+  <script src="../js/lib/slick.min.js"></script>
+  <script src="../js/lib/jquery.fancybox.js"></script>
+  <script src="../js/lib/jquery.lazyload.min.js"></script>
+  <script src="../js/lib/imagesloaded.pkgd.min.js"></script>
+  <script src="../js/lib/jquery.flex-images.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/bootstrap-select.js"></script>
+  <script src="../js/script1.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.js"></script>
+  <script src="https://use.fontawesome.com/9fb736d1ce.js"></script>
+  <script src="script/styleguide.js"></script>
+</body>
+
+</html>

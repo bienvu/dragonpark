@@ -1,0 +1,26 @@
+{% block blockGridContent %}
+  <div class="container">
+    <div class="box-content {{ grid_content_class }}">
+      {% if title is not empty %}<h2 class="block-title">{{ title }}</h2>{% endif %}
+      <div class="box-content__list {{ js_class }}">
+        {% for item in grid_content %}
+          <div class="box-content__item">
+            <div class="box-content__wrap">
+              {% if item.grid_content_image is not empty %}
+                <div class="box-content__image"><a href="event-detail.html"><img src="{{ item.grid_content_image }}"></a></div>
+              {% endif %}
+              <div class="box-content__content">
+                <ul class="box-content__time">
+                  <li class="hours">{{ item.grid_content_hours }}</li>
+                  <li class="minute">{{ item.grid_content_minute }}</li>
+                  <li class="moment">{{ item.grid_content_moments }}</li>
+                </ul>
+                <h3 class="box-content__title"><a href="event-detail.html">{{ item.grid_content_title }}</a></h3>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

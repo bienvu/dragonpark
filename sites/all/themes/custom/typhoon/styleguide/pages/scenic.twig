@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>{{ site_title }} - {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+      <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="../css/jquery.flex-images.css">
+      <link rel="stylesheet" href="../css/font-awesome.min.css">
+      <link rel="stylesheet" href="../css/styles.css">
+    {% endblock %}
+  </head>
+  <body>
+      {% include '../layouts/navigation-slide.twig' %}
+      <div class="main-content">
+        {% include '../components/breadcrumb.twig' %}
+        {% include '../components/box-grid-scenic.twig' %}
+      </div>
+      {% include '../layouts/footer.twig' %}
+      <script src="script/jquery.min.js"></script>
+      <script src="../js/lib/media.match.min.js"></script>
+      <script src="../js/lib/enquire.min.js"></script>
+      <script src="../js/lib/slick.min.js"></script>
+      <script src="../js/lib/jquery.fancybox.js"></script>
+      <script src="../js/lib/jquery.lazyload.min.js"></script>
+      <script src="../js/lib/imagesloaded.pkgd.min.js"></script>
+      <script src="../js/lib/jquery.flex-images.js"></script>
+      <script src="../js/lib/bootstrap.min.js"></script>
+      <script src="../js/lib/bootstrap-select.js"></script>
+      <script src="../js/script1.js"></script>
+  </body>
+</html>

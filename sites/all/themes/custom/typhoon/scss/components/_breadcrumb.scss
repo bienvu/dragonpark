@@ -1,0 +1,49 @@
+.breadcrumb {
+  @extend %clearfix;
+  margin-bottom: 30px;
+
+  li {
+    float: left;
+    letter-spacing: .4px;
+    margin-right: 14px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '/';
+      right: -11px;
+      display: inline-block;
+    }
+
+    a {
+      color: $gray-77;
+    }
+
+    &.current {
+      @include utmavo-bold;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  @include utmavo-bold;
+
+  a {
+    @include utmavo;
+    color: $gray-77;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  i {
+    @include utmavo;
+    color: $gray-77;
+    margin-right: 3px;
+  }
+}

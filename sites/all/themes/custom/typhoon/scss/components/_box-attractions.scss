@@ -1,0 +1,277 @@
+.box-attractions {
+  @extend %clearfix;
+  clear: both;
+  margin-bottom: 27px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(1) {
+    .block-title {
+      color: $orange-ff;
+    }
+  }
+
+  &:nth-child(2) {
+    .block-title {
+      color: $green;
+    }
+  }
+
+  .block-title {
+    position: relative;
+    padding-left: 0;
+
+    &:before {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $gray-da;
+      content: '';
+      width: 100%;
+    }
+
+    .content-number {
+      color: $gray-cd;
+      font-size: 18px;
+      padding-left: 8px;
+    }
+
+    > span {
+      background: $white;
+      padding: 10px 0;
+      position: relative;
+    }
+  }
+
+  &__list {
+    @include susy-media(tablet) {
+      margin: 0 -10px;
+    }
+
+    @include susy-media(desktop) {
+      margin: 0 -15px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 26px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @include susy-media(640px) {
+      margin: 0 10px;
+    }
+
+    @include susy-media(tablet) {
+      float: left;
+      margin: 0 15px;
+    }
+  }
+
+  &__image {
+    border-radius: 4px;
+    line-height: 1;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+
+    &:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: transparent url('../images/bg-content.png') repeat-x scroll center bottom / 100% 40px;
+      content: '';
+      z-index: 1;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+        transition: .5s;
+      }
+    }
+
+    img {
+      transition: .5s;
+      transform: scale(1);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__info {
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    z-index: 2;
+    color: $white;
+
+    li {
+      float: left;
+      margin-right: 20px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '|';
+        right: -10px;
+        display: inline-block;
+      }
+
+      &:last-child {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include utmavo-bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+
+    a {
+      color: $text-color;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__body,
+  &__body * {
+    line-height: 1.2;
+    font-size: 13px;
+    border: 0!important;
+    padding: 0 !important;
+  }
+
+  .slick-arrow {
+    background-color: $white;
+  }
+}
+
+.view-location {
+  @extend %clearfix;
+
+  .view-header {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 0;
+    margin-top: 4px;
+    width: 100%;
+
+    @include susy-media(mobileLandscape) {
+      width: 70px;
+    }
+
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .view-filters {
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include susy-media(mobileLandscape) {
+      width: calc(100% - 70px);
+      margin-bottom: 41px;
+    }
+  }
+
+  .view-content {
+    @extend %clearfix;
+    clear: both;
+  }
+
+  .slick-track {
+    margin: 0;
+  }
+}
+
+.views-exposed-widgets {
+  .views-exposed-widget {
+    padding-top: 0;
+    padding-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+
+    @include susy-media(mobileLandscape) {
+      padding-right: 20px;
+      width: auto;
+    }
+
+    @include susy-media(desktop) {
+      padding-right: 30px;
+      margin-bottom: 0;
+    }
+
+    .form-submit {
+      margin: 0;
+      min-width: 140px;
+      padding: 4px 0 6px;
+      text-transform: capitalize;
+    }
+  }
+
+  label {
+    display: none;
+  }
+
+  .views-widget {
+    .dropdown-toggle {
+      border: 1px solid $gray-9b;
+      height: 30px;
+      padding: 3px 30px 3px 10px;
+      border-radius: 4px;
+      width: 100%;
+
+      @include susy-media(mobileLandscape) {
+        min-width: 160px;
+        width: auto;
+      }
+
+      .bs-caret {
+        background: none;
+
+        span::before {
+          color: $gray-9b;
+        }
+      }
+    }
+
+    .dropdown-menu.open {
+      top: 32px;
+      border: 1px solid $gray-9b;
+      border-radius: 4px;
+      min-width: inherit;
+      width: 100%;
+
+      @include susy-media(mobileLandscape) {
+        min-width: 160px;
+        width: auto;
+      }
+    }
+  }
+}

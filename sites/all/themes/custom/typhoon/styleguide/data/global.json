@@ -1,0 +1,29 @@
+{
+  "site_title": "Typhoon styleguide",
+  "img_path": "images-demo/",
+  "project_path":"http://dev-typhoon.pantheonsite.io/",
+  "list_groups": [
+    {
+      "name":"basic",
+      "title": "Basic Elements"
+    },
+    {
+      "name":"helper",
+      "title":"Helper Classes"
+    },
+    {
+      "name":"component",
+      "title":"Components"
+    }
+  ],
+  "list_components":[
+    {
+      "name":"box-grid-service",
+      "group":"component"
+    },
+    {
+      "name":"box-explore",
+      "group":"component"
+    }
+  ]
+}

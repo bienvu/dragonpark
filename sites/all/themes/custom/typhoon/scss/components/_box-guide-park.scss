@@ -1,0 +1,49 @@
+.guide-park {
+  @extend %clearfix;
+
+  h2 {
+    @extend .block-title;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+    line-height: 1;
+
+    @include susy-media(tablet) {
+      float: left;
+      padding-right: 48px;
+      width: 50%;
+    }
+  }
+
+  &__content {
+    @include susy-media(tablet) {
+      float: left;
+      width: 50%;
+    }
+  }
+
+  ul {
+    @include susy-media(mobileOnly) {
+      padding-left: 20px;
+    }
+
+    li {
+      font-size: 14px;
+      margin-bottom: 5px;
+      position: relative;
+
+      &:before {
+        background: $primary-color;
+        border-radius: 100%;
+        content: '';
+        height: 6px;
+        left: -18px;
+        position: absolute;
+        top: 10px;
+        width: 6px;
+      }
+    }
+  }
+}
+

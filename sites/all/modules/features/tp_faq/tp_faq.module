@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TP faq feature.
+ */
+
+include_once 'tp_faq.features.inc';

@@ -1,0 +1,91 @@
+
+.bootstrap-select {
+  position: relative;
+
+  select {
+    display: none;
+  }
+
+  .btn {
+    background: $white;
+    border: 0;
+  }
+
+  .dropdown-toggle {
+    background-color: $white;
+    border: 0 none;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.125rem;
+    padding: 10px;
+    position: relative;
+    text-transform: capitalize;
+    z-index: 1;
+    overflow: hidden;
+    min-width: 150px;
+    padding-right: 30px;
+    height: 42px;
+    color: $text-color;
+
+    .bs-caret {
+      background: $blue-b1;
+      bottom: 0;
+      font-family: awesome;
+      height: 100%;
+      padding: 5px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span:before {
+        color: $blue-2d;
+        font-size: 22px;
+      }
+    }
+  }
+
+  .dropdown-menu.open {
+    background: $white;
+    border-radius: rem(5px);
+    border: rem(1px) solid $blue-b1;
+    box-shadow: rem(0 1px 10px 0) rgba(0, 0, 0, .05);
+    cursor: pointer;
+    display: none;
+    left: 0;
+    min-width: rem(188px);
+    position: absolute;
+    top: 48px;
+    z-index: 2;
+
+    a {
+      color: $text-color;
+      display: block;
+      font-size: rem(13px);
+      padding: rem(5px 15px);
+
+      &:hover {
+        //background: $blue-b1;
+        background: $blue-17;
+        color: $white;
+      }
+    }
+
+    ul li {
+      text-indent: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.open {
+    .dropdown-menu {
+      display: block;
+    }
+  }
+}

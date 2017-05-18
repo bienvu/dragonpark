@@ -1,0 +1,30 @@
+.box-intro {
+  @extend %clearfix;
+
+  &__video,
+  &__slide {
+    width: 50%;
+    float: left;
+
+    video {
+      width: 100%;
+      height:auto;
+    }
+  }
+
+  &__video {
+
+  }
+
+  &__slide {
+    &__item {
+      position: relative;
+    }
+
+    &__content {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

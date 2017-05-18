@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TP Direction feature.
+ */
+
+include_once 'tp_direction.features.inc';

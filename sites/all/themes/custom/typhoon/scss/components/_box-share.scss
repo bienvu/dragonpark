@@ -1,0 +1,56 @@
+.box-share {
+  border: 1px solid $gray-de;
+  padding: 13px;
+  text-align: center;
+  font-size: 14px;
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: $gray-77;
+  }
+
+  ul {
+    overflow: hidden;
+  }
+
+  li {
+    display: inline-block;
+
+    a {
+      color: $text-color;
+      display: inline-block;
+      font-size: 14px;
+      min-width: 102px;
+      padding: 7px 20px;
+      transition: .5s;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid $gray-de;
+
+      @include susy-media(tablet) {
+        min-width: 55px;
+      }
+
+      @include susy-media(desktop) {
+        min-width: 90px;
+        min-width: 55px\9;
+      }
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+        transition: .5s;
+      }
+    }
+
+    i {
+      font-size: 17px;
+      margin-right: 4px;
+    }
+  }
+}

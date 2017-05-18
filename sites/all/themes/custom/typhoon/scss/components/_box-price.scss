@@ -1,0 +1,89 @@
+.box-ticket-price {
+  .block-title {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .description {
+    margin-bottom: 38px;
+  }
+
+  table {
+    th {
+      &:first-child {
+        width: 55%;
+      }
+    }
+
+    td,
+    th {
+      border: 0;  
+    }
+
+    tbody {
+      tr:last-child,
+      tr:nth-child(3),
+      tr:nth-child(5) {
+        td {
+          border-bottom: 1px solid $gray-da;
+          padding-bottom: 28px;
+        }
+      }
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 0 !important;
+      border: 0;
+    }
+  }
+}
+
+table {
+    margin-bottom: 23px;
+
+    @include susy-media(mobileOnly) {
+      display: block;
+      overflow: auto;
+    }
+
+    th {
+      @include utmavo-bold;
+      border-bottom: 1px solid $gray-da;
+      padding-bottom: 16px;
+      font-size: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+
+      @include susy-media(mobileOnly) {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 0 !important;
+      border-left: 1px solid $gray-da;
+    }
+
+    td,
+    th {
+      border: 1px solid $gray-da;
+    }
+
+    td {
+      padding: 25px 0 14px;
+      font-size: 14px;
+      padding-left: 15px;
+      padding-right: 15px;
+      vertical-align: top;
+
+      @include susy-media(mobileOnly) {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  }

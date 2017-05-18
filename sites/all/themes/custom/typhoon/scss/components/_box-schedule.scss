@@ -1,0 +1,212 @@
+.box-schedule {
+  //margin-top: -30px;
+  position: relative;
+  z-index: 3;
+  color: $white;
+  height: 560px;
+  background: #06437C;
+  overflow: hidden;
+
+  @include susy-media(tablet) {
+    height: 500px;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    img {
+      height: 100%;
+      max-width: inherit;
+      width: auto;
+    }
+  }
+
+  .block-title {
+    color: $white;
+    margin-bottom: 8px;
+  }
+
+  &__content {
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    padding: 0 10px;
+    height: 100%;
+    display: table;
+
+    &__wrap {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+
+      @include susy-media(desktop) {
+        padding: 0 20%;
+      }
+    }
+
+    &__inner {
+      @extend %clearfix;
+
+      @include susy-media(tablet) {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__left {
+      @include susy-media(tablet) {
+        //padding-right: 9px;
+        //text-align: right;
+        //width: 50%;
+        //float: left;
+      }
+    }
+
+    &__right {
+      display: none;
+
+      @include susy-media(tablet) {
+        padding-left: 9px;
+        text-align: left;
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  &__season {
+    color: $blue-48;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__month {
+    font-size: 17px;
+
+    li {
+      display: inline-block;
+      padding: 0 2px;
+    }
+  }
+
+  &__time {
+    font-size: 24px;
+    margin-bottom: 14px;
+
+    @include susy-media(tablet) {
+      font-size: 36px;
+    }
+  }
+
+  .note i {
+    color: orange;
+    font-size: 18px;
+    line-height: 1;
+    margin-right: 3px;
+    position: relative;
+    top: 2px;
+  }
+
+  p {
+    @include susy-media(desktop) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.bg-bubble {
+  bottom: 0;
+  left: -4px;
+  padding: 28px 22px 40px;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  width: 150%;
+    -webkit-animation: animateBubble 26s linear infinite, sideWays 20s ease-in-out infinite alternate;
+  -moz-animation: animateBubble 26s linear infinite, sideWays 20s ease-in-out infinite alternate;
+  animation: animateBubble 26s linear infinite, sideWays 20s ease-in-out infinite alternate;
+
+  @include susy-media(desktop) {
+    background-size: 100% auto;
+  }
+}
+
+/* KEYFRAMES */
+@-webkit-keyframes animateBubble {
+    0% {
+        margin-top: 0;
+    }
+    100% {
+        margin-top: -45%;
+    }
+}
+
+@-moz-keyframes animateBubble {
+    0% {
+        margin-top: 0;
+    }
+    100% {
+        margin-top: -45%;
+    }
+}
+
+@keyframes animateBubble {
+    0% {
+        margin-top: 0;
+    }
+    100% {
+        margin-top: -45%;
+    }
+}
+
+@-webkit-keyframes sideWays {
+    0% {
+      margin-left:-30px;
+
+      @include susy-media(tablet) {
+        margin-left:-150px;
+      }
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@-moz-keyframes sideWays {
+    0% {
+        margin-left:-30px;
+
+        @include susy-media(tablet) {
+          margin-left:-150px;
+        }
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left:-30px;
+
+        @include susy-media(tablet) {
+          margin-left:-150px;
+        }
+    }
+    100% {
+        margin-left: 0px;
+    }
+}

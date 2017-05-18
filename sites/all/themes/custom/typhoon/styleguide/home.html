@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Typhoon styleguide -</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="../css/jquery.flex-images.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="front">
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=837227993036339";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <header class="header">
+    <div class="header__top">
+      <div class="header__left">
+        <div class="header__icon-menu">
+          <i class="menu-icon">icon</i>
+          <div class="header__menu">
+            <div class="container">
+              <div id="main-menu" class="navigation">
+                <ul class="menu">
+                  <li class="first expanded"><a href="expolore-the-park.html" title="">Explore the Park</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="attractions.html" title="" class="active">Attractions</a>
+                      </li>
+                      <li class="leaf"><a href="children.html" title="" class="active">Children’s músements</a>
+                      </li>
+                      <li class="leaf"><a href="scenic.html" title="" class="active">Scenic Ảchitecture</a>
+                      </li>
+                      <li class="leaf"><a href="retail.html" title="" class="active">Retails</a>
+                      </li>
+                      <li class="leaf"><a href="restaurent.html" title="" class="active">Restaurant</a>
+                      </li>
+                      <li class="last leaf"><a href="service.html" title="" class="active">Other services</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="expanded"><a href="plan-your-visit.html" title="" class="active">Plan your visit</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="/" title="" class="active">Opening Days</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">How to get to Typhoon</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">Guide park</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">Ticket Prices</a>
+                      </li>
+                      <li class="leaf"><a href="/" title="" class="active">Map</a>
+                      </li>
+                      <li class="last leaf"><a href="/" title="" class="active">Annual Pass</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="expanded"><a href="/" title="" class="active">Next Events</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="event-detail.html" title="" class="active">Annual Pass</a>
+                      </li>
+                      <li class="leaf"><a href="event-detail.html" title="" class="active">Halloween</a>
+                      </li>
+                      <li class="leaf"><a href="event-detail.html" title="" class="active">Looney tunes action</a>
+                      </li>
+                      <li class="leaf"><a href="event-detail.html" title="" class="active">Toys House</a>
+                      </li>
+                      <li class="last leaf"><a href="event-detail.html" title="" class="active">Bubble Water</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="last expanded"><a href="/" title="" class="active">About Typhoon</a>
+                    <ul class="menu">
+                      <li class="first leaf"><a href="gallery.html" title="" class="active">Social Gallery</a>
+                      </li>
+                      <li class="leaf"><a href="about-us.html" title="" class="active">About Us</a>
+                      </li>
+                      <li class="leaf"><a href="contact-us.html" title="" class="active">Contact Us</a>
+                      </li>
+                      <li class="leaf"><a href="helps.html" title="" class="active">Helps</a>
+                      </li>
+                      <li class="last leaf"><a href="privacy.html" title="" class="active">Privacy</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- /#main-menu -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__logo">
+        <a href="home.html" title="Home" rel="home" id="logo">
+          <img src="../logo.png" alt="Home">
+        </a>
+      </div>
+      <div class="header__right">
+        <ul class="social-link">
+          <li><a href="#"><i class="fa fa-search"></i></a>
+          </li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li><a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header__bottom">
+      <div class="block-hero-video">
+        <div class="block-hero-video__video">
+          <video width="1280" height="720" muted="true" loop="loop" autoplay="true" preload="auto">
+            <source src="../images/video-demo/demo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="block-hero-video__content">
+          <div class="container">
+            <h1 class="block-hero-video__title">passionate with typhoon water park</h1>
+            <div class="block-hero-video__body">
+              <p>passionate with typhoon water park</p>
+            </div>
+            <a href="contact-us.html" class="btn btn--large">Buy tickets</a>
+          </div>
+        </div>
+      </div>
+      <div class="block-tabs ">
+        <div class="container">
+          <div class="block-tabs__switcher">
+            <a href="" class="tab-ticket js-block-tab-switcher active" data-index="0">Buy ticket</a>
+            <a href="" class="tab-hotel js-block-tab-switcher" data-index="1">Buy Hotel</a>
+          </div>
+          <div class="block-tabs__container">
+            <div class="block-tabs__container__tab active" data-index="0">
+              <form class="form-booking">
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Individual (+1...">0 Individual (+1...</option>
+                    <option title="2 Individual (+1...">1 Individual (+1...</option>
+                    <option title="3 Individual (+1...">3 Individual (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Junior  (+1...">0 Junior (+1...</option>
+                    <option title="Combo 2">1 Junior (+1...</option>
+                    <option title="Combo 3">3 Junior (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Senior (+1...">0 Senior (+1...</option>
+                    <option title="Combo 2">1 Senior (+1...</option>
+                    <option title="Combo 3">3 Senior (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Handicapped (+1...">0 Handicapped (+1...</option>
+                    <option title="Combo 2">1 Handicapped (+1...</option>
+                    <option title="Combo 3">3 Handicapped (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Large Family (+1...">0 Large Family (+1...</option>
+                    <option title="Combo 2">1 Large Family (+1...</option>
+                    <option title="Combo 3">3 Large Family (+1...</option>
+                  </select>
+                </div>
+                <div class="form-wrap form-item">
+                  <button>Buy tickets</button>
+                </div>
+              </form>
+            </div>
+            <div class="block-tabs__container__tab" data-index="1">
+              <form class="form-booking">
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Individual (+1...">0 Individual (+1...</option>
+                    <option title="2 Individual (+1...">1 Individual (+1...</option>
+                    <option title="3 Individual (+1...">3 Individual (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Junior  (+1...">0 Junior (+1...</option>
+                    <option title="Combo 2">1 Junior (+1...</option>
+                    <option title="Combo 3">3 Junior (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Senior (+1...">0 Senior (+1...</option>
+                    <option title="Combo 2">1 Senior (+1...</option>
+                    <option title="Combo 3">3 Senior (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Handicapped (+1...">0 Handicapped (+1...</option>
+                    <option title="Combo 2">1 Handicapped (+1...</option>
+                    <option title="Combo 3">3 Handicapped (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <select class="selectpicker">
+                    <option title="0 Large Family (+1...">0 Large Family (+1...</option>
+                    <option title="Combo 2">1 Large Family (+1...</option>
+                    <option title="Combo 3">3 Large Family (+1...</option>
+                  </select>
+                </div>
+                <div class="form-item form-wrap">
+                  <button>Booking Hotel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="main-content">
+    <div class="box-image">
+      <a href="expolore-the-park.html">
+        <img src="../images/image-demo/explore.jpg">
+      </a>
+    </div>
+
+    <div class="box-schedule">
+      <div class="box-schedule__image">
+        <img src="../images/image-demo/bg-schedule.png">
+      </div>
+      <div class="box-schedule__content">
+        <h2 class="block-title">Schedule</h2>
+        <div class="box-schedule__description">
+          Typhoon Water Park will open on Mondays <b>the 8th of Jun 2017.</b>
+          <b>Take a look</b> at our <b>calendar</b> here.
+        </div>
+        <div class="box-schedule__content__inner">
+          <div class="box-schedule__content__left">
+            <div class="box-schedule__season">Hight season</div>
+            <ul class="box-schedule__month">
+              <li>MAR</li>
+              <li>APR</li>
+              <li>MAY</li>
+              <li>JUN</li>
+              <li>JULY</li>
+              <li>AUG</li>
+            </ul>
+            <div class="box-schedule__time">9:30 - 17:00</div>
+          </div>
+          <div class="box-schedule__content__right">
+            <div class="box-schedule__season">Low season</div>
+            <ul class="box-schedule__month">
+              <li>SEP</li>
+              <li>OCT</li>
+              <li>NOV</li>
+              <li>DEC</li>
+              <li>JAN</li>
+              <li>FEB</li>
+            </ul>
+            <div class="box-schedule__time">9:30 - 15:00</div>
+          </div>
+        </div>
+        <p>*The operation of the slide stops 15 minutes before the closing of the park</p>
+        <a href="service.html" class="btn btn--large">More Details</a>
+      </div>
+    </div>
+
+    <div class="box-image-attraction">
+      <div class="box-image-attraction__image">
+        <img src="../images/image-demo/attraction.jpg">
+      </div>
+      <div class="box-image-attraction__content">
+        <div class="box-image-attraction__inner js-slide-attraction">
+          <div class="box-image-attraction__item">
+            <div class="box-image-attraction__icon">
+              <img src="../images/image-demo/icon1.png">
+            </div>
+            <h2 class="box-image-attraction__title">King Cobra</h2>
+            <div class="box-image-attraction__body">
+              <p>On two-person floats, visitors ride a half pipe at a 90-degree slope. Get ready to scream at this adrenaline rush.</p>
+            </div>
+            <a href="contact-us.html" class="btn btn--large">Buy tickets</a>
+          </div>
+          <div class="box-image-attraction__item">
+            <div class="box-image-attraction__icon">
+              <img src="../images/image-demo/icon1.png">
+            </div>
+            <h2 class="box-image-attraction__title">King Cobra 2</h2>
+            <div class="box-image-attraction__body">
+              <p>On two-person floats, visitors ride a half pipe at a 90-degree slope. Get ready to scream at this adrenaline rush.</p>
+            </div>
+            <a href="contact-us.html" class="btn btn--large">Buy tickets</a>
+          </div>
+          <div class="box-image-attraction__item">
+            <div class="box-image-attraction__icon">
+              <img src="../images/image-demo/icon1.png">
+            </div>
+            <h2 class="box-image-attraction__title">King Cobra 3</h2>
+            <div class="box-image-attraction__body">
+              <p>On two-person floats, visitors ride a half pipe at a 90-degree slope. Get ready to scream at this adrenaline rush.</p>
+            </div>
+            <a href="contact-us.html" class="btn btn--large">Buy tickets</a>
+          </div>
+        </div>
+        <a href="attractions.html" class="btn-image-attraction">Attractions</a>
+      </div>
+    </div>
+
+    <div class="box-image margin-top-30">
+      <a href="service.html">
+        <img src="../images/image-demo/other-service.png">
+      </a>
+    </div>
+
+    <div class="box-weather">
+      <div class="box-weather__image">
+        <img src="../images/image-demo/weather-bg.png">
+      </div>
+      <div class="box-weather__content">
+        <h2 class="block-title">Weather</h2>
+        <div class="box-weather__decription">The Typhoon Water Park continues to operate in the event of rain. The activity to be performed at Typhoon Water Park stop in case of lightning</div>
+        <div class="box-weather__temple">
+          <span class="sun">30</span>
+          <span class="status">
+          <label>Beach Park is now:</label>
+          <span>Open</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="box-have-fun">
+      <div class="box-have-fun__image">
+        <img src="../images/image-demo/have-fun.jpg">
+      </div>
+      <div class="box-have-fun__content">
+        <h2 class="box-have-fun__title">Come <b>Have Fun</b> Share</h2>
+        <a href="gallery.html" class="btn--border">View Gallery</a>
+      </div>
+    </div>
+
+    <div class="box-gmap margin-top-30">
+      <div class="box-gmap__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.9152533071438!2d107.04780744913772!3d20.95591819557148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a58f4f1315789%3A0x68b783c7ba0c962b!2sSun+World+H%E1%BA%A1+Long+Park!5e0!3m2!1svi!2s!4v1488624688999"
+        width="1920" height="495" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="box-gmap__content">
+        <div class="box-gmap__inner">
+          <h2 class="block-title">contact</h2>
+          <h3>Email</h3>
+          <p>Contact@typhoon-park.com</p>
+          <h3>Phone</h3>
+          <p>(+84) 123 456 789</p>
+          <h3>Fax</h3>
+          <p>(+84) 123 456 710</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer__bg"></div>
+    <div class="footer__top clearfix">
+      <div class="container">
+        <div id="main-menu" class="navigation">
+          <ul class="menu">
+            <li class="first expanded"><a href="expolore-the-park.html" title="">Explore the Park</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="attractions.html" title="" class="active">Attractions</a>
+                </li>
+                <li class="leaf"><a href="children.html" title="" class="active">Children’s músements</a>
+                </li>
+                <li class="leaf"><a href="scenic.html" title="" class="active">Scenic Ảchitecture</a>
+                </li>
+                <li class="leaf"><a href="retail.html" title="" class="active">Retails</a>
+                </li>
+                <li class="leaf"><a href="restaurent.html" title="" class="active">Restaurant</a>
+                </li>
+                <li class="last leaf"><a href="service.html" title="" class="active">Other services</a>
+                </li>
+              </ul>
+            </li>
+            <li class="expanded"><a href="plan-your-visit.html" title="" class="active">Plan your visit</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="/" title="" class="active">Opening Days</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">How to get to Typhoon</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">Guide park</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">Ticket Prices</a>
+                </li>
+                <li class="leaf"><a href="/" title="" class="active">Map</a>
+                </li>
+                <li class="last leaf"><a href="/" title="" class="active">Annual Pass</a>
+                </li>
+              </ul>
+            </li>
+            <li class="expanded"><a href="/" title="" class="active">Next Events</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="event-detail.html" title="" class="active">Annual Pass</a>
+                </li>
+                <li class="leaf"><a href="event-detail.html" title="" class="active">Halloween</a>
+                </li>
+                <li class="leaf"><a href="event-detail.html" title="" class="active">Looney tunes action</a>
+                </li>
+                <li class="leaf"><a href="event-detail.html" title="" class="active">Toys House</a>
+                </li>
+                <li class="last leaf"><a href="event-detail.html" title="" class="active">Bubble Water</a>
+                </li>
+              </ul>
+            </li>
+            <li class="last expanded"><a href="/" title="" class="active">About Typhoon</a>
+              <ul class="menu">
+                <li class="first leaf"><a href="gallery.html" title="" class="active">Social Gallery</a>
+                </li>
+                <li class="leaf"><a href="about-us.html" title="" class="active">About Us</a>
+                </li>
+                <li class="leaf"><a href="contact-us.html" title="" class="active">Contact Us</a>
+                </li>
+                <li class="leaf"><a href="helps.html" title="" class="active">Helps</a>
+                </li>
+                <li class="last leaf"><a href="privacy.html" title="" class="active">Privacy</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /#main-menu -->
+      </div>
+    </div>
+    </div>
+    <div class="footer__bottom clearfix">
+      <div class="container">
+        <div class="region region-footer">
+          <div id="block-block-1" class="block block-block contextual-links-region">
+            <div class="content">
+              <p>&copy; 2017 Typhoon Water Park. All rights reserved. Designed by Apecsoft</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /#footer -->
+    <div class="block-help">
+      <a href="helps.html">Help</a>
+    </div>
+    <div class="block-back-to-top js-back-to-top"><a href="#">back to top</a>
+    </div>
+  </footer>
+  <script src="script/jquery.min.js"></script>
+  <script src="../js/lib/media.match.min.js"></script>
+  <script src="../js/lib/enquire.min.js"></script>
+  <script src="../js/lib/slick.min.js"></script>
+  <script src="../js/lib/jquery.fancybox.js"></script>
+  <script src="../js/lib/jquery.lazyload.min.js"></script>
+  <script src="../js/lib/imagesloaded.pkgd.min.js"></script>
+  <script src="../js/lib/jquery.flex-images.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/bootstrap-select.js"></script>
+  <script src="../js/script1.js"></script>
+</body>
+
+</html>

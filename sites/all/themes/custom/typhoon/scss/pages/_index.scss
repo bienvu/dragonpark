@@ -1,0 +1,63 @@
+// INDEX
+// Please define all styles for the index page in this file.
+// For each new page template added to /templates/pages/*.twig,
+// please add a corresponding file in /assets/scss/pages/*.scss.
+
+.page-help {
+  .box-menu {
+    &__link {
+      li:nth-child(4) {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .box-search {
+    .form-item,
+    .form-actions {
+      margin: 0;
+    }
+  }
+}
+
+.page-privacy,
+.page-node-44,
+.page-node-34 {
+  .box-menu {
+    &__link {
+      li:nth-child(5) {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.page-node-6,
+.page-node-42 {
+  .box-menu {
+    &__link {
+      li:nth-child(3) {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.page-node-22,
+.page-node-36 {
+  .box-menu {
+    &__link {
+      li:nth-child(2) {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

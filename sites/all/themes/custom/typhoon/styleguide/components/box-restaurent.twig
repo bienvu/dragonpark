@@ -1,0 +1,48 @@
+{% set title = "Restaurent" %}
+{% set content = [
+    {
+      'content_zone' : 'Zone 1',
+      'content_family' : 'Family',
+      'content_image' : '../images/image-demo/images1.jpg',
+      'content_title' : 'King corba'
+    },
+    {
+      'content_zone' : 'Zone 1',
+      'content_family' : 'Family',
+      'content_image' : '../images/image-demo/images2.jpg',
+      'content_title' : 'turbulence rapids'
+    },
+    {
+      'content_zone' : 'Zone 1',
+      'content_family' : 'Family',
+      'content_image' : '../images/image-demo/images3.jpg',
+      'content_title' : 'tsunami spillway'
+    }
+  ]
+%}
+
+{% block boxRestaurent %}
+  <div class="container">
+    <div class="box-restaurent {{ content_class }}">
+      {% if title is not empty %}<h2 class="block-title">{{ title }}<span class="content-number">(10)</span></h2>{% endif %}
+      <div class="box-restaurent__list">
+        {% for item in content %}
+          <div class="box-restaurent__item">
+            {% if item.content_image is not empty %}
+              <div class="box-restaurent__image">
+                <a href="restaurent-detail.html"><img src="{{ item.content_image }}"></a>
+              </div>
+            {% endif %}
+            <div class="box-restaurent__content">
+              <h3 class="box-restaurent__title"><a href="restaurent-detail.html">{{ item.content_title }}</a></h3>
+              <ul class="box-restaurent__info">
+                <li class="zone">{{ item.content_zone }}</li>
+                <li class="family">{{ item.content_family }}</li>
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

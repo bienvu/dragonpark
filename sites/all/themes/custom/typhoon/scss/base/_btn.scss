@@ -1,0 +1,88 @@
+// Button
+.btn {
+  @include utmavo;
+  border-radius: 50px;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(15px);
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  padding: rem(10px 15px);
+  text-align: center;
+  text-transform: uppercase;
+  transition: .5s;
+
+  @include susy-media(tablet) {
+    font-size: rem(18px);
+    min-width: rem(178px);
+    padding: rem(10px 15px 12px);
+  }
+
+  &,
+  &:focus,
+  &:visited {
+    background: $orange-fd;
+    background: -moz-linear-gradient(top, $orange-fd 0%, $orange-ed 60%);
+    background: -webkit-linear-gradient(top, $orange-fd 0%, $orange-ed 60%);
+    background: linear-gradient(to bottom, $orange-fd 0%, $orange-ed 60%);
+    color: $white;
+    transition: .5s;
+    outline: none;
+  }
+
+  &:active,
+  &:hover {
+    background: $orange-darken;
+    background: -moz-linear-gradient(top, $orange-fd 0%, $orange-darken 60%);
+    background: -webkit-linear-gradient(top, $orange-fd 0%, $orange-darken 60%);
+    background: linear-gradient(to bottom, $orange-fd 0%, $orange-darken 60%);
+    color: $white;
+    transition: .5s;
+    outline: none;
+  }
+
+  &--icon-ticket {
+    &:before {
+      font-family: 'FontAwesome';
+      content: '\f145';
+      margin-right: 10px;
+    }
+  }
+
+  &--icon-direct {
+    padding-left: 33px;
+    position: relative;
+
+    &:before {
+      background: transparent url('../images/icon-direct.png') no-repeat scroll 0 0 / 100% auto;
+      content: '';
+      height: 15px;
+      left: 15px;
+      margin-right: 10px;
+      position: absolute;
+      top: 50%;
+      //transform: translate(0, -50%);
+      width: 15px;
+      margin-top: -7.5px;
+    }
+  }
+
+  &--large {
+    @include susy-media(tablet) {
+      min-width: 200px;
+      padding: 17px 20px;
+    }
+  }
+
+  &--small {
+    float: right;
+    height: 30px;
+    min-width: 141px;
+    padding-bottom: 3px;
+    padding-right: 20px;
+    padding-top: 3px;
+  }
+}

@@ -1,0 +1,127 @@
+$width-default-search-desktop: rem(40px);
+$height-default-search-desktop: rem(35px);
+
+.block-search {
+  position: relative;
+
+  @include susy-media(tablet) {
+    width: $width-default-search-desktop;
+    height: $height-default-search-desktop;
+    position: absolute;
+    left: -45px;
+    top: 0;
+    transition: .5s;
+  }
+
+  .element-invisible {
+    display: none;
+  }
+
+  &.is-active {
+    @include susy-media(tablet) {
+      display: block;
+      left: -45px;
+      right: inherit;
+      width: 250px;
+
+      .form-text {
+        border-color: $gray;
+        padding-left: $width-default-search-desktop;
+        font-size: 14px;
+        background: rgba($black, .5);
+        color: $white;
+      }
+
+      &:before {
+        background: transparent;
+        bottom: rem(-20px);
+        content: '';
+        left: rem(-20px);
+        position: absolute;
+        right: rem(-20px);
+        top: rem(-20px);
+        z-index: 3;
+      }
+    }
+  }
+
+  .form-type-textfield {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    z-index: 4;
+    display: inline-block;
+  }
+
+  .form-text {
+    color: $white;
+    width: 100%;
+    background: none;
+    min-height: inherit;
+    font-size: 14px;
+    height: 35px;
+    box-shadow: none;
+    padding: 3px 10px 5px 40px;
+    border-radius: 20px;
+
+    &:focus,
+    &:active {
+      color: $white;
+    }
+
+    @include susy-media(mobileOnly) {
+      padding: 3px 10px 3px 40px;
+      padding-left: $width-default-search-desktop;
+    }
+
+    @include susy-media(tablet) {
+      border-color: transparent;
+      margin: 0;
+      transition: .8s;
+      font-size: 0;
+    }
+  }
+
+  .form-actions {
+    height: $height-default-search-desktop;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 48px;
+    z-index: 4;
+    left: 0;
+
+    &:before {
+      color: $white;
+      content:"\f002";
+      font-family: 'FontAwesome';
+      font-size: rem(14px);
+      height: 100%;
+      line-height: 1.5;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      padding: 1px 0;
+      left: 0;
+      width: 100%;
+
+      @include susy-media(tablet) {
+        background: #fed217;
+        border-radius: 100%;
+        display: inline-block;
+        height: 35px;
+        line-height: 35px;
+        padding: 0;
+        vertical-align: middle;
+        width: 35px;
+      }
+    }
+
+    .form-submit {
+      height: 100%;
+      opacity: 0;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{% block boxNavigation %}
+  <div class="box-navigation {{ class }}">
+    {% if title is not empty %}<h2 class="block-title">{{ title }}</h2>{% endif %}
+    <div class="box-navigation__list">
+      {% for item in navigation_content %}
+        <div class="box-navigation__item">
+          {% if item.content_image is not empty %}
+            <div class="box-navigation__image"><a href="event-detail.html"><img src="{{ item.content_image }}"></a></div>
+          {% endif %}
+            <h3 class="box-navigation__title"><a href="event-detail.html">{{ item.content_title }}</a></h3>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

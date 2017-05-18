@@ -1,0 +1,12 @@
+name = TP Direction
+description = Build page direction.
+core = 7.x
+package = Typhoon
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = tp_custom_blocks
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = direction_page
+features[page_manager_pages][] = map

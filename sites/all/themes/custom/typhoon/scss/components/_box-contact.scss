@@ -1,0 +1,38 @@
+.box-contact {
+  text-align: center;
+
+  &__title {
+    @extend .block-title;
+    font-size: 30px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+
+  &__info {
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+
+    @include susy-media(desktop) {
+      padding: 0 28px;
+      text-align: left;
+    }
+
+    li {
+      border-bottom: 1px dashed $gray-dd;
+      padding: 6px 0 7px;
+
+      @include susy-media(desktop) {
+        padding: 6px 0 7px 25px;
+      }
+
+      i {
+        min-width: 15px;
+      }
+    }
+  }
+
+  &__buy-ticket {
+    margin-top: 43px;
+  }
+}

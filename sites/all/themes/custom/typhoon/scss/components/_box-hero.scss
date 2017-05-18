@@ -1,0 +1,82 @@
+.box-hero {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+
+  @include susy-media(600px) {
+    height: 325px;
+  }
+
+  &__image {
+    position: relative;
+    height: 100%;
+
+    &:before {
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: rgba($black, .4);
+      z-index: 1;
+    }
+
+    img {
+      height: 100%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      //-ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: auto;
+      max-width: inherit;
+      transition: .5s;
+      left: 0\9;
+      top: 0\9;
+      transform: translate(0, 0)\9;
+
+      @include susy-media(600px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__title {
+    @include UVNAnhSang;
+    color: $white;
+    font-size: 40px;
+    letter-spacing: 1px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    width: 80%;
+    z-index: 2;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-top: 10px;
+
+    @include susy-media(768px) {
+      padding-top: 50px;
+    }
+
+    @include susy-media(1024px) {
+      padding-top: 10px;
+    }
+
+    @include susy-media(600px) {
+      font-size: 60px;
+    }
+
+    @include susy-media(desktop) {
+      font-size: 95px;
+      line-height: 80px;
+    }
+  }
+}
