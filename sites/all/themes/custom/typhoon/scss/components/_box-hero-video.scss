@@ -21,11 +21,12 @@
     width: auto;
 
     @include susy-media(desktop) {
-      width: 115%;
+      width: 100%;
       height: auto;
       top: 0\9;
       left: 0\9;
       transform: translate(0, 0)\9;
+      margin-top: -25px;
     }
 
     @include susy-media(1921px) {

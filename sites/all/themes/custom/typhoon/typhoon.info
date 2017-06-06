@@ -5,7 +5,6 @@ engine = phptemplate
 
 ; Add a style sheet for all media
 stylesheets[all][] = css/font-awesome.min.css
-stylesheets[all][] = css/jquery.fancybox.min.css
 stylesheets[all][] = css/styles.css
 
 ; Scripts
@@ -21,11 +20,15 @@ scripts[] = js/lib/plugins.js
 scripts[] = js/lib/circletype.js
 scripts[] = js/lib/svgdata.js
 scripts[] = js/lib/jquery.lazylinepainter-1.7.0.min.js
+scripts[] = js/lib/jquery.matchHeight-min.js
+scripts[] = js/lib/jquery.textillate.js
 scripts[] = js/script.js
 
 
 regions[header_top] = Header Top
 regions[header] = Header
+regions[header_intro] = Header Intro
+regions[header_intro_right] = Header Intro Right
 regions[header_right] = Header Right
 regions[header_left] = Header Left
 regions[header_social] = Header Social

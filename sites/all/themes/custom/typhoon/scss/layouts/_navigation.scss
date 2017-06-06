@@ -13,20 +13,21 @@
     li {
       padding: 0;
       margin: 0;
-      list-style-image: url('../images/dot.png');
+      list-style-image: url('../images/icon/arrow.png');
       font-size: 14px;
-      margin-bottom: 11px;
+      margin-bottom: 9px;
     }
 
     a {
-      color: $blue-79;
+      color: #3c3b3c;
       transition: .5s;
       display: block;
       position: relative;
       z-index: 99;
+      font-weight: bold;
 
       &:hover {
-        color: $white;
+        color: $primary-color;
         transition: .5s;
       }
 
@@ -55,10 +56,10 @@
 
     > li {
       list-style: none;
-      margin-bottom: 0;
+      margin-bottom: 13px;
 
       @include susy-media(tablet) {
-        width: 25%;
+        width: 33.33%;
         float: left;
       }
 
@@ -67,12 +68,12 @@
       }
 
       > a {
-        @include UTMCookies;
-        color: $white;
+        @include SanFranciscoDisplay-Semibold;
+        color: #3c3b3c;
         display: block;
         font-size: 18px;
         line-height: 2;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
 
         @include susy-media(desktop) {
           font-size: 20px;
@@ -91,7 +92,7 @@
 
       @include susy-media(mobileOnly) {
         align-items:center;
-        color: $white;
+        color: #3c3b3c;
         cursor: pointer;
         display: block;
         display: flex;
@@ -102,6 +103,7 @@
         right: 0;
         top: 0;
         width: 36px;
+        z-index: 999;
       }
     }
 

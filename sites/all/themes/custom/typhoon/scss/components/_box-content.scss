@@ -6,6 +6,7 @@
     border-radius: 5px;
     display: inline-block;
     overflow: hidden;
+    text-align: center;
 
     &:hover {
       img {
@@ -25,7 +26,7 @@
       left: 0;
       width: 100%;
       height: 100px;
-      background: url('../images/bg-content.png') repeat-x scroll 0 0 transparent;
+      background: url('../images/bg-event-title.png') repeat-x scroll 0 0 transparent;
       content: '';
       z-index: 1;
       background-size: auto 100px;
@@ -44,6 +45,7 @@
     width: 100%;
     margin-bottom: 12px;
     color: $text-color;
+    display: none;
 
     li {
       float: left;
@@ -87,9 +89,9 @@
   }
 
   &__title {
-    @include utmavo-bold;
+    @include SanFranciscoDisplay-Bold;
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: 18px;
     text-transform: uppercase;
 
     a {
@@ -133,4 +135,26 @@
   margin-top: 0!important;
   margin-bottom: 40px;
   width: 100%;
+}
+
+.field-name-field-list-image {
+  @extend %clearfix;
+  @include susy-media(tablet) {
+    margin: 0 -10px;
+  }
+
+  .field-item {
+    @include susy-media(tablet) {
+      width: 50%;
+      float: left;
+      line-height: 0;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }

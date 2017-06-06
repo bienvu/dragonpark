@@ -5,7 +5,7 @@
 ?>
 
 <div class="<?php print $classes; ?>">
-  <h2 class="box-contact__title"><?php print t('Typhoon Water Park'); ?></h2>
+  <h2 class="box-contact__title"><?php print t('Dragon Park'); ?></h2>
   <?php if ($desc): ?>
     <div class="box-contact__description"><p><?php print $desc; ?></p></div>
   <?php endif; ?>

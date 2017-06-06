@@ -41,7 +41,8 @@ function typhoon_preprocess_html(&$vars) {
  * Override or insert variables into the page template.
  */
 function typhoon_preprocess_page(&$vars) {
-  $vars['logo'] = '/' . path_to_theme() . '/logo.png';
+  $vars['logo'] = '/sundragon/' . path_to_theme() . '/logo.png';
+  // $vars['logo'] = '/' . path_to_theme() . '/logo.png';
 
   if (isset($vars['node']->type)) {
     $nodetype = $vars['node']->type;
@@ -94,6 +95,10 @@ function typhoon_preprocess_node(&$vars) {
   if ($vars['node']->type == 'location' || ($vars['node']->type === 'event')) {
     $vars['zone'] = $node_wp->field_zone->value();
   }
+
+  if ($vars['node']->type == 'location') {
+    $vars['heightlocation'] = $node_wp->field_height->value();
+  }
 }
 
 function typhoon_links($variables) {
@@ -135,7 +140,6 @@ function typhoon_preprocess_bean_box_links(&$vars) {
   $lang_code = $language->language;
   $info = array('langcode' => $lang_code);
   $vars['classes_array'][] = 'box-menu';
-  $vars['classes_array'][] = 'bg-image';
   $bean = $vars['bean'];
   $bean_wp = entity_metadata_wrapper('bean', $bean, $info);
   $vars['items'] = array();
@@ -209,7 +213,7 @@ function typhoon_preprocess_bean_box_zone_intro(&$vars) {
   foreach ($items as $key => $item) {
     $item_wp = entity_metadata_wrapper('field_collection_item', $item, $info);
     $img = $item_wp->field_zone_image->value();
-    $vars['items'][$key]['img_src'] = image_style_url('960x530', $img['uri']);
+    $vars['items'][$key]['img_src'] = image_style_url('720x405', $img['uri']);
     $vars['items'][$key]['img_alt'] = $img['alt'];
     $link = $item_wp->language($lang_code)->field_zone_link->value();
     $vars['items'][$key]['name'] = $item_wp->language($lang_code)->field_zone_name->value();
@@ -259,7 +263,8 @@ function typhoon_preprocess_bean_hero(&$vars) {
   $vars['items'] = array();
   $vars['title'] = t($bean_wp->title->value());
   $banner = $bean_wp->field_banner->value();
-  $vars['img_src'] = file_create_url($banner['uri']);
+  // $vars['img_src'] = file_create_url($banner['uri']);
+  $vars['img_src'] = image_style_url('1920x375', $banner['uri']);
   $vars['img_alt'] = $banner['alt'];
 }
 
@@ -284,7 +289,8 @@ function typhoon_preprocess_bean_hero_slide(&$vars) {
     $link = $item_wp->language($lang_code)->field_link->value();
     $vars['items'][$key]['small_title'] = $item_wp->language($lang_code)->field_small_title->value();
     $vars['items'][$key]['title'] = $item_wp->language($lang_code)->field_title->value();
-    $vars['items'][$key]['link'] = $link['url'];
+    $vars['items'][$key]['link_url'] = $link['url'];
+    $vars['items'][$key]['link_title'] = $link['title'];
     $vars['items'][$key]['desc'] = $item_wp->language($lang_code)->field_description->value();
     if (!empty($img)) {
       $vars['items'][$key]['img_src'] = file_create_url($img['uri']);
@@ -303,6 +309,9 @@ function typhoon_preprocess_bean_hero_slide(&$vars) {
  * Bean type: image
  */
 function typhoon_preprocess_bean_image(&$vars) {
+  global $language;
+  $lang_code = $language->language;
+  $info = array('langcode' => $lang_code);
   $vars['classes_array'][] = 'box-image';
   $bean = $vars['bean'];
   $bean_wp = entity_metadata_wrapper('bean', $bean);
@@ -310,6 +319,8 @@ function typhoon_preprocess_bean_image(&$vars) {
   $img = $bean_wp->field_image->value();
   $vars['img_src'] = file_create_url($img['uri']);
   $vars['img_alt'] = $img['alt'];
+  $link = $bean_wp->language($lang_code)->field_link_image->value();
+  $vars['link'] = $link['url'];
   if ($bean_wp->field_box_image_style->value()) {
     $vars['classes_array'][] = $bean_wp->field_box_image_style->value();
   }
@@ -581,7 +592,7 @@ function typhoon_preprocess_paragraphs_item_3_tile_navigation(&$vars) {
     $link = $item->field_link->value();
     $vars['items'][$key]['title'] = $item->field_title->value();
     $vars['items'][$key]['link'] = $link['url'];
-    $vars['items'][$key]['img_src'] = image_style_url('440x250', $img['uri']);
+    $vars['items'][$key]['img_src'] = image_style_url('528x300', $img['uri']);
     $vars['items'][$key]['img_alt'] = $img['alt'] ? $img['alt'] : $item->field_title->value();
     $vars['items'][$key]['img_title'] = $img['title'] ? $img['title'] : $item->field_title->value();
   }

@@ -1,8 +1,8 @@
 .box-info {
   margin-bottom: 35px;
   text-align: center;
-  color: $white;
   font-size: 14px;
+  color: #4a4a4a;
 
   .title {
     @include utmavo-bold;
@@ -15,7 +15,6 @@
     margin-bottom: 37px;
 
     a {
-      color: $white;
       text-decoration: underline;
       cursor: pointer;
 
@@ -42,7 +41,7 @@
     }
 
     ul {
-      border: 1px solid $gray-de;
+      border: 1px solid #C0AE37;
       overflow: hidden;
       border-radius: 3px;
       display: inline-block;
@@ -54,12 +53,13 @@
       display: inline-block;
       min-width: 82px;
       min-height: 88px;
-      border-right: 1px solid $gray-de;
+      border-right: 1px solid #C0AE37;
       padding-top: 62px;
       font-size: 11px;
       width: 33%;
       min-width: 61px\9;
       float: left\9;
+
 
       @include susy-media(480px) {
         min-width: 95px;
@@ -82,15 +82,18 @@
       }
 
       &.preformance {
-        background: url('../images/performance-icon.png') no-repeat scroll center 15px transparent;
+        background: url('../images/performance.svg') no-repeat scroll center 15px transparent;
+        background-size: 40px auto;
       }
 
       &.family {
-        background: url('../images/family-icon.png') no-repeat scroll center 15px transparent;
+        background: url('../images/family.svg') no-repeat scroll center 15px transparent;
+        background-size: 40px auto;
       }
 
       &.person {
-        background: url('../images/person-icon.png') no-repeat scroll center 15px transparent;
+        background: url('../images/person-with-disability.svg') no-repeat scroll center 15px transparent;
+        background-size: 40px auto;
       }
 
       &:last-child {

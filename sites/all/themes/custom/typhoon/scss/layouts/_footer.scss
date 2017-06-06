@@ -5,8 +5,17 @@
 
   &__bg {
     background: transparent url("../images/icon/bg-footer.png") no-repeat scroll center top;
-    height: 125px;
-    margin-top: 30px;
+    height: 50px;
+    margin-top: 15px;
+    background-size: 100% auto;
+
+    @include susy-media(desktop) {
+      background-size: auto;
+    }
+
+    @include susy-media(tablet) {
+      height: 125px;
+    }
   }
 
   &__top {
@@ -25,7 +34,7 @@
     line-height: 0; 
 
     @include susy-media(tablet) {
-      padding: 18px 0;
+      padding: 17px 0;
     }
 
     .region-footer {
@@ -67,13 +76,21 @@
       li {
         display: inline-block;
         border: 0;
-        padding: 0 15px;
+        padding: 0 16px;
 
         a {
           @include SanFranciscoDisplay-Regular;
           color: $primary-color;
           font-weight: bold;
-          font-size: 16px;
+          font-size: 12px;
+
+          @include susy-media(tablet) {
+            font-size: 16px;
+          }
+
+          &:hover {
+            color: #FED217;
+          }
         }
       }
     }

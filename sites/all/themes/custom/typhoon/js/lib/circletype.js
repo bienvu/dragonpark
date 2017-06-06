@@ -1,7 +1,159 @@
 /*
- * CircleType 0.37
+ * CircleType 0.36
  * Peter Hrynkow
  * Copyright 2014, Licensed GPL & MIT
  *
  */
-$.fn.circleType=function(a){var c={dir:1,position:"relative"};return"function"!=typeof $.fn.lettering?void console.log("Lettering.js is required"):this.each(function(){a&&$.extend(c,a);var h,i,b=this,d=180/Math.PI,e=parseInt($(b).css("font-size"),10),f=parseInt($(b).css("line-height"),10)||e,g=b.innerHTML.replace(/^\s+|\s+$/g,"").replace(/\s/g,"&nbsp;");b.innerHTML=g,$(b).lettering(),b.style.position=c.position,h=b.getElementsByTagName("span"),i=Math.floor(h.length/2);var j=function(){var g,j,k,m,n,o,p,q,a=0,i=0;for(g=0;g<h.length;g++)a+=h[g].offsetWidth;for(j=a/Math.PI/2+f,c.fluid&&!c.fitText?c.radius=Math.max(b.offsetWidth/2,j):c.radius||(c.radius=j),k=c.dir===-1?"center "+(-c.radius+f)/e+"em":"center "+c.radius/e+"em",m=c.radius-f,g=0;g<h.length;g++)n=h[g],i+=n.offsetWidth/2/m*d,n.rot=i,i+=n.offsetWidth/2/m*d;for(g=0;g<h.length;g++)n=h[g],o=n.style,p=-i*c.dir/2+n.rot*c.dir,q="rotate("+p+"deg)",o.position="absolute",o.left="50%",o.marginLeft=-(n.offsetWidth/2)/e+"em",o.webkitTransform=q,o.MozTransform=q,o.OTransform=q,o.msTransform=q,o.transform=q,o.webkitTransformOrigin=k,o.MozTransformOrigin=k,o.OTransformOrigin=k,o.msTransformOrigin=k,o.transformOrigin=k,c.dir===-1&&(o.bottom=0);c.fitText&&("function"!=typeof $.fn.fitText?console.log("FitText.js is required when using the fitText option"):($(b).fitText(),$(window).resize(function(){l()}))),l(),"function"==typeof c.callback&&c.callback.apply(b)},k=function(a){var b=document.documentElement,c=a.getBoundingClientRect();return{top:c.top+window.pageYOffset-b.clientTop,left:c.left+window.pageXOffset-b.clientLeft,height:c.height}},l=function(){var d,a=k(h[i]),c=k(h[0]);d=a.top<c.top?c.top-a.top+c.height:a.top-c.top+c.height,b.style.height=d+"px"};c.fluid&&!c.fitText&&$(window).on("resize",function(){j()}),"complete"!==document.readyState?(b.style.visibility="hidden",$(window).on("load",function(){b.style.visibility="visible",j()})):j()})};
+(function( $, undefined ) {
+  $.fn.circleType = function(options) {
+    var self = this,
+      settings = {
+        dir: 1,
+        position: 'relative',
+      };
+    if (typeof($.fn.lettering) !== 'function') {
+      console.log('Lettering.js is required');
+      return;
+    }
+    return this.each(function () {
+
+      if (options) {
+        $.extend(settings, options);
+      }
+      var elem = this,
+        delta = (180 / Math.PI),
+        fs = parseInt($(elem).css('font-size'), 10),
+        ch = parseInt($(elem).css('line-height'), 10) || fs,
+        txt = elem.innerHTML.replace(/^\s+|\s+$/g, '').replace(/\s/g, '&nbsp;'),
+        letters,
+        center;
+
+      elem.innerHTML = txt
+      $(elem).lettering();
+
+      elem.style.position =  settings.position;
+
+      letters = elem.getElementsByTagName('span');
+      center = Math.floor(letters.length / 2)
+
+      var layout = function () {
+        var tw = 0,
+          i,
+          offset = 0,
+          minRadius,
+          origin,
+          innerRadius,
+          l, style, r, transform;
+
+        for (i = 0; i < letters.length; i++) {
+          tw += letters[i].offsetWidth;
+        }
+        minRadius = (tw / Math.PI) / 2 + ch;
+
+        if (settings.fluid && !settings.fitText) {
+          settings.radius = Math.max(elem.offsetWidth / 2, minRadius);
+        }
+        else if (!settings.radius) {
+          settings.radius = minRadius;
+        }
+
+        if (settings.dir === -1) {
+          origin = 'center ' + (-settings.radius + ch) / fs + 'em';
+        } else {
+          origin = 'center ' + settings.radius / fs + 'em';
+        }
+
+        innerRadius = settings.radius - ch;
+
+        for (i = 0; i < letters.length; i++) {
+          l = letters[i];
+          offset += l.offsetWidth / 2 / innerRadius * delta;
+          l.rot = offset;
+          offset += l.offsetWidth / 2 / innerRadius * delta;
+        }
+        for (i = 0; i < letters.length; i++) {
+          l = letters[i]
+          style = l.style
+          r = (-offset * settings.dir / 2) + l.rot * settings.dir
+          transform = 'rotate(' + r + 'deg)';
+
+          style.position = 'absolute';
+          style.left = '50%';
+          style.marginLeft = -(l.offsetWidth / 2) / fs + 'em';
+
+          style.webkitTransform = transform;
+          style.MozTransform = transform;
+          style.OTransform = transform;
+          style.msTransform = transform;
+          style.transform = transform;
+
+          style.webkitTransformOrigin = origin;
+          style.MozTransformOrigin = origin;
+          style.OTransformOrigin = origin;
+          style.msTransformOrigin = origin;
+          style.transformOrigin = origin;
+          if(settings.dir === -1) {
+            style.bottom = 0;
+          }
+        }
+
+        if (settings.fitText) {
+          if (typeof($.fn.fitText) !== 'function') {
+            console.log('FitText.js is required when using the fitText option');
+          } else {
+            $(elem).fitText();
+            $(window).resize(function () {
+              updateHeight();
+            });
+          }
+        }
+        updateHeight();
+
+        if (typeof settings.callback === 'function') {
+          // Execute our callback with the element we transformed as `this`
+          settings.callback.apply(elem);
+        }
+      };
+
+      var getBounds = function (elem) {
+        var docElem = document.documentElement,
+          box = elem.getBoundingClientRect();
+        return {
+          top: box.top + window.pageYOffset - docElem.clientTop,
+          left: box.left + window.pageXOffset - docElem.clientLeft,
+          height: box.height
+        };
+      };
+
+      var updateHeight = function () {
+        var mid = getBounds(letters[center]),
+          first = getBounds(letters[0]),
+          h;
+        if (mid.top < first.top) {
+          h = first.top - mid.top + first.height;
+        } else {
+          h = mid.top - first.top + first.height;
+        }
+        elem.style.height = h + 'px';
+      }
+
+      if (settings.fluid && !settings.fitText) {
+        $(window).on('resize', function () {
+          layout();
+        });
+      }
+
+      if (document.readyState !== "complete") {
+        elem.style.visibility = 'hidden';
+        $(window).on('load',function () {
+          elem.style.visibility = 'visible';
+          layout();
+        });
+      } else {
+        layout();
+      }
+    });
+  };
+})( jQuery );
+
+

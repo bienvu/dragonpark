@@ -40,6 +40,21 @@ function tp_image_styles_image_default_styles() {
     ),
   );
 
+  // Exported image style: 1920x375.
+  $styles['1920x375'] = array(
+    'label' => '1920x375',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1920,
+          'height' => 375,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: 1300x580.
   $styles['1300x580'] = array(
     'label' => '1300x580',
@@ -64,6 +79,36 @@ function tp_image_styles_image_default_styles() {
         'data' => array(
           'width' => 960,
           'height' => 530,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 1280x720.
+  $styles['1280x720'] = array(
+    'label' => '1280x720',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 720,
+          'height' => 405,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 720x405.
+  $styles['720x405'] = array(
+    'label' => '720x405',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 720,
+          'height' => 405,
         ),
         'weight' => 1,
       ),
@@ -190,6 +235,21 @@ function tp_image_styles_image_default_styles() {
         'data' => array(
           'width' => 440,
           'height' => 250,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 440x250.
+  $styles['528x300'] = array(
+    'label' => '528x300',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 528,
+          'height' => 300,
         ),
         'weight' => 1,
       ),

@@ -12,13 +12,14 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($title_suffix); ?>
   <div class="content-sidebar__content">
-    <div class="margin-bottom-40">
+    <div class="margin-bottom-20">
       <?php print render($content['field_image']); ?>
     </div>
     <!-- <h2<?php print $title_attributes; ?>>
       <?php print $title; ?>
     </h2> -->
     <?php print render($content['body']); ?>
+    <?php print render($content['field_list_image']); ?>
     <h3 class="block-title"><?php print t('Comments'); ?></h3>
     <div class="fb-comments" data-href="<?php print url($node_url, array('absolute' => TRUE)); ?>" data-width="100%" data-numposts="5"></div>
   </div>
@@ -41,8 +42,8 @@
         </div>
       <?php endif; ?>
       <div class="box-info__turn">
-        <h2 class="title">turn</h2>
-        <div class="turn">5 turn</div>
+        <h2 class="title"><?php print t('Height'); ?></h2>
+        <div class="turn"><?php print $heightlocation; ?></div>
       </div>
       <!-- <div class="box-info__buy-ticket">
         <a href="/contact-us" class="btn btn--icon-ticket"><?php print t('Buy ticket'); ?></a>

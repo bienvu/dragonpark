@@ -1,8 +1,13 @@
 .guide-park {
   @extend %clearfix;
+  margin-top: 15px;
 
   h2 {
-    @extend .block-title;
+    @include SanFranciscoDisplay-Medium;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   &__image {
@@ -34,7 +39,7 @@
       position: relative;
 
       &:before {
-        background: $primary-color;
+        background: #2e2e2e;
         border-radius: 100%;
         content: '';
         height: 6px;

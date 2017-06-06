@@ -1,154 +1,154 @@
-.box-weather {
-  position: relative;
-  z-index: 2;
-  height: 400px;
-  background-size: auto 450px;
-  background-color: #fff;
+// .box-weather {
+//   position: relative;
+//   z-index: 2;
+//   height: 400px;
+//   background-size: auto 450px;
+//   background-color: #fff;
 
-  @include susy-media(desktop-wide) {
-    background-size: 100% auto;
-  }
+//   @include susy-media(desktop-wide) {
+//     background-size: 100% auto;
+//   }
 
-  @include susy-media(mobileTabletLanscapeOnly) {
-    background-position: 0 0 !important;
-    background-attachment: inherit !important;
-  }
+//   @include susy-media(mobileTabletLanscapeOnly) {
+//     background-position: 0 0 !important;
+//     background-attachment: inherit !important;
+//   }
 
 
-  &__content {
-    //left: 50%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    // top: 50%;
-    // transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    display: table;
+//   &__content {
+//     //left: 50%;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     position: absolute;
+//     // top: 50%;
+//     // transform: translate(-50%, -50%);
+//     text-align: center;
+//     width: 100%;
+//     height: 100%;
+//     padding: 10px;
+//     display: table;
 
-    // @include susy-media(tablet) {
-    //   width: auto;
-    //   padding: 0;
-    // }
+//     // @include susy-media(tablet) {
+//     //   width: auto;
+//     //   padding: 0;
+//     // }
 
-    &__inner {
-      display: table-cell;
-      vertical-align: middle;
-      width: 100%;
+//     &__inner {
+//       display: table-cell;
+//       vertical-align: middle;
+//       width: 100%;
 
-      @include susy-media(desktop) {
-        padding: 0 20%;
-      }
-    }
-  }
+//       @include susy-media(desktop) {
+//         padding: 0 20%;
+//       }
+//     }
+//   }
 
-  &__image {
-    height: 100%;
+//   &__image {
+//     height: 100%;
 
-    img {
-      width: auto;
-      max-width: inherit;
-      height: 100%;
-    }
-  }
+//     img {
+//       width: auto;
+//       max-width: inherit;
+//       height: 100%;
+//     }
+//   }
 
-  .block-title {
-    margin-bottom: 10px;
-  }
+//   .block-title {
+//     margin-bottom: 10px;
+//   }
 
-  &__decription {
-    font-size: 17px;
-    margin-bottom: 50px;
+//   &__decription {
+//     font-size: 17px;
+//     margin-bottom: 50px;
 
-    @include susy-media(tablet) {
-      margin-bottom: 25px;
-    }
-  }
+//     @include susy-media(tablet) {
+//       margin-bottom: 25px;
+//     }
+//   }
 
-  &__temple {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+//   &__temple {
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
 
-    .sun,
-    .rain {
-      position: relative;
-      font-size: 48px;
-      color: $primary-color;
-      padding-right: 18px;
-      line-height: 1;
-      margin-right: 30px;
+//     .sun,
+//     .rain {
+//       position: relative;
+//       font-size: 48px;
+//       color: $primary-color;
+//       padding-right: 18px;
+//       line-height: 1;
+//       margin-right: 30px;
 
-      @include susy-media(tablet) {
-        font-size: 48px;  
-      }
+//       @include susy-media(tablet) {
+//         font-size: 48px;  
+//       }
 
-      &:before {
-        background: url('../images/sun-icon.png') no-repeat scroll 0 0 transparent;
-        content: '';
-        display: inline-block;
-        height: 50px;
-        position: absolute;
-        width: 62px;
-        top: -50px;
-        background-size: auto 100%;
+//       &:before {
+//         background: url('../images/sun-icon.png') no-repeat scroll 0 0 transparent;
+//         content: '';
+//         display: inline-block;
+//         height: 50px;
+//         position: absolute;
+//         width: 62px;
+//         top: -50px;
+//         background-size: auto 100%;
 
-        @include susy-media(tablet) {
-          height: 60px;
-          top: 50%;
-          //transform: translate(0, -50%);
-          left: -85px;
-          margin-top: -30px;
-        }
-      }
+//         @include susy-media(tablet) {
+//           height: 60px;
+//           top: 50%;
+//           //transform: translate(0, -50%);
+//           left: -85px;
+//           margin-top: -30px;
+//         }
+//       }
 
-      &:after {
-        content: 'c';
-        position: absolute;
-        right: 0;
-        top: 1px;
-        width: 10px;
-        height: 10px;
-        font-size: 28px;
-      }
-    }
+//       &:after {
+//         content: 'c';
+//         position: absolute;
+//         right: 0;
+//         top: 1px;
+//         width: 10px;
+//         height: 10px;
+//         font-size: 28px;
+//       }
+//     }
 
-    .status {
-      border-left: 1px solid $gray-da;
-      padding-left: 25px;
-      text-align: left;
+//     .status {
+//       border-left: 1px solid $gray-da;
+//       padding-left: 25px;
+//       text-align: left;
 
-      @include susy-media(tablet) {
-        padding-left: 30px;
-      }
+//       @include susy-media(tablet) {
+//         padding-left: 30px;
+//       }
 
-      label {
-        margin-bottom: 5px;
-        font-size: 14px;
+//       label {
+//         margin-bottom: 5px;
+//         font-size: 14px;
 
-        @include susy-media(tablet) {
-          font-size: 18px;
-        }
-      }
+//         @include susy-media(tablet) {
+//           font-size: 18px;
+//         }
+//       }
 
-      span {
-        @include utmavo-bold;
-        color: $orange-fe;
-        font-size: 24px;
-        line-height: 1;
+//       span {
+//         @include utmavo-bold;
+//         color: $orange-fe;
+//         font-size: 24px;
+//         line-height: 1;
 
-        @include susy-media(tablet) {
-          font-size: 32px;
-        }
-      }
-    }
+//         @include susy-media(tablet) {
+//           font-size: 32px;
+//         }
+//       }
+//     }
 
-    > span {
-      display: inline-block;
-    }
-  }
-}
+//     > span {
+//       display: inline-block;
+//     }
+//   }
+// }

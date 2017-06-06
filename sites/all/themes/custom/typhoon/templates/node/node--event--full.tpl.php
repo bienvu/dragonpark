@@ -12,7 +12,7 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($title_suffix); ?>
   <div class="content-sidebar__content">
-    <div class="margin-bottom-40">
+    <div class="margin-bottom-20">
       <?php print render($content['field_image']); ?>
     </div>
     <!-- <h2<?php print $title_attributes; ?>>

@@ -119,19 +119,26 @@
   }
 
   &--list {
-    padding: 0;
+    padding: 0 0 10px 0;
 
     .box-gallery-item {
       padding: 0;
-      width: 27%;
+      width: 50%;
       height: auto;
+      line-height: 0;
+
+      @include susy-media(tablet) {
+        width: 27%;
+      }
 
       &:nth-child(4),
       &:nth-child(5) {
         display: inline-block;
-        height: 253px;
         position: relative;
-        width: 19%;
+
+        @include susy-media(tablet) {
+          width: 19%;
+        }
 
         .box-gallery__image {
           position: static;
@@ -142,7 +149,10 @@
           height: 100%;
           width: auto;
           max-width: inherit;
-          margin-left: -10%;
+
+          @include susy-media(tablet) {
+            margin-left: -10%;
+          }
         }
       }
 
@@ -151,7 +161,7 @@
       }
 
       &:hover {
-        box-shadow: 0 0 18px 0 #000;
+        box-shadow: 0 0 18px -8px #000;
         overflow: hidden;
         transform: scale(1);
         transition: .5s;

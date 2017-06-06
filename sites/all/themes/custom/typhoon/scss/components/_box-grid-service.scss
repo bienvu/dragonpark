@@ -1,19 +1,52 @@
 .box-grid-service {
   @extend %clearfix;
+  overflow: hidden;
+
+  @include susy-media(desktop) {
+    display: flex;
+  }
+
+  &:hover {
+    .box-grid-service {
+      &__item {
+        transition: transform .2s;
+
+        &.next-item {
+          @include susy-media(tablet) {
+            transform: translate3d(2vw, 0px, 0px) scale(1);
+          }
+        }
+
+        &.pre-item {
+          @include susy-media(tablet) {
+            transform: translate3d(-2vw, 0px, 0px) scale(1);
+          }
+        }
+
+        &:hover {
+          @include susy-media(tablet) {
+            transform: translate3d(0, 0px, 0px) scale(1.25);
+          }
+
+          &:after {
+            opacity: .8;
+            transition: 1s;
+          }
+        }
+      }
+    }
+  }
 
   &__item {
     float: left;
     position: relative;
     overflow: hidden;
-    transition: 1s;
+    transition: transform .2s;
     cursor: pointer;
     width: 50%;
+    transform: translate3d(0px, 0px, 0px) scale(1);
 
     @include susy-media(640px) {
-      width: 33.33%;
-    }
-
-    @include susy-media(desktop) {
       width: 20%;
     }
 
@@ -27,68 +60,57 @@
       background: rgba(#000, .35);
     }
 
-    &:hover {
-      //.box-grid-service  {
-      //  &__content {
-      //    @include susy-media(desktop) {
-      //      opacity: 1;
-      //      visibility: visible;
-      //      top: 140px;
-      //      transition: 1s;
-      //    }
-      //  }
-      //
-      //  &__icon {
-      //    @include susy-media(desktop) {
-      //      bottom: calc(100% - 160px);
-      //      transition: 1s;
-      //    }
-      //  }
-      //}
+    &:after {
+      background: transparent url("../images/icon/bg-overlay.png") no-repeat scroll center bottom;
+      bottom: 0;
+      content: "";
+      display: inline-block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      opacity: 0;
+      transition: 1s;
     }
   }
 
   &__icon {
-    position: absolute;
     left: 0;
+    padding: 20px 10px;
+    position: absolute;
     right: 0;
     text-align: center;
-    padding: 20px 10px;
+    top: 50%;
+    transform: translate(0px, -50%);
+    transition: all 1s ease 0s;
     z-index: 3;
-    min-height: 136px;
-    transition: 1s;
-    bottom: calc(100% - 160px);
 
-    @include susy-media(640px) {
-      bottom: calc(100% - 140px);
-    }
-
-    @include susy-media(tablet) {
-      bottom: calc(100% - 160px);
-    }
-
-    @include susy-media(desktop) {
-      bottom: 0;
-    }
-
-    .title {
-      @include UTMCookies;
+    a {
+      @include UVNAnhSang;
+      font-size: 30px;
       color: $white;
-      font-size: 20px;
-      margin-top: 5px;
 
-      @include susy-media(tablet) {
-        font-size: 25px;
+      @include susy-media(desktop-large) {
+        font-size: 40px;
       }
     }
   }
 
   &__image {
-    line-height: 1;
+    line-height: 0;
 
     img {
       width: 100%;
       height: auto;
+    }
+  }
+
+  .svg-icon {
+    svg {
+      width: 70px;
+      height: auto;
+      padding-top: 60px;
     }
   }
 }

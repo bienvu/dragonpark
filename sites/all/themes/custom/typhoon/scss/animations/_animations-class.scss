@@ -20,7 +20,25 @@
      -o-animation-duration: 5s;
       animation-duration: 5s;
   }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .animated.zoomIn {
+    animation-name: zoomIn;
+    opacity: 1;
+  }
 }
+
+
 
 
 /*===================================================================================*/

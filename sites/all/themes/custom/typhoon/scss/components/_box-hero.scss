@@ -1,12 +1,48 @@
+.pane-bean-hero-banner {
+  position: relative;
+  text-align: center;
+
+  .pane-title {
+    @include SanFranciscoDisplay-Semibold;
+    color: $white;
+    font-size: 30px;
+    letter-spacing: 1px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    width: 80%;
+    z-index: 2;
+    top: 65%;
+    transform: translate(0, -50%);
+    padding-top: 10px;
+
+    @include susy-media(768px) {
+      padding-top: 50px;
+      font-size: 36px;
+      top: 50%;
+    }
+
+    @include susy-media(1024px) {
+      padding-top: 10px;
+    }
+
+    @include susy-media(desktop) {
+      line-height: 80px;
+    }
+  }
+}
+
 .box-hero {
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   position: relative;
   text-align: center;
   cursor: pointer;
 
-  @include susy-media(600px) {
-    height: 325px;
+  @include susy-media(tablet) {
+    height: 280px;
   }
 
   &__image {
@@ -47,9 +83,9 @@
   }
 
   &__title {
-    @include UVNAnhSang;
+    @include SanFranciscoDisplay-Semibold;
     color: $white;
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: 1px;
     left: 0;
     margin: 0 auto;
@@ -58,24 +94,15 @@
     text-transform: uppercase;
     width: 80%;
     z-index: 2;
-    top: 50%;
+    top: 65%;
     transform: translate(0, -50%);
-    padding-top: 10px;
 
     @include susy-media(768px) {
-      padding-top: 50px;
-    }
-
-    @include susy-media(1024px) {
-      padding-top: 10px;
-    }
-
-    @include susy-media(600px) {
-      font-size: 60px;
+      font-size: 36px;
+      top: 50%;
     }
 
     @include susy-media(desktop) {
-      font-size: 95px;
       line-height: 80px;
     }
   }

@@ -26,8 +26,8 @@
           <?php if ($item['desc']): ?>
           <div class="box-hero-slide__body js-scroll-appear animated" data-scroll-appear="fadeInUp"><p><?php print $item['desc']; ?></p></div>
           <?php endif; ?>
-          <?php if ($item['link']): ?>
-            <a href="<?php print $item['link']; ?>" class="btn btn--large js-scroll-appear animated" data-scroll-appear="fadeInUp"><?php print t('explore the park'); ?></a>
+          <?php if ($item['link_url']): ?>
+            <a href="<?php print $item['link_url']; ?>" class="btn btn--large js-scroll-appear animated" data-scroll-appear="fadeInUp"><?php print $item['link_title']; ?></a>
           <?php endif; ?>
         </div>
       </div>

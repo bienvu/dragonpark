@@ -93,6 +93,10 @@
           <div class="header__menu">
             <div class="container">
               <div class="header__social">
+                <?php
+                  $block = module_invoke('locale', 'block_view', 'language');
+                  print $block['content'];
+                ?>
                 <?php print render($page['header_social']); ?>
               </div>
               <div class="header__search">
@@ -101,26 +105,33 @@
                   <?php print drupal_render($search_form); ?>
                 </div>
               </div>
-              <?php if ($main_menu): ?>
-                <div id="main-menu" class="navigation">
-                  <?php print theme('links__system_main_menu', array(
-                    'links' => $main_menu,
-                    'attributes' => array(
-                      'id' => 'main-menu-links',
-                      'class' => array('links', 'clearfix'),
-                    ),
-                    'heading' => array(
-                      'text' => t('Main menu'),
-                      'level' => 'h4',
-                      'class' => array('element-invisible'),
-                    ),
-                  )); ?>
-                </div> <!-- /#main-menu -->
-              <?php endif; ?>
+              <div class="header__intro">
+                <?php if ($main_menu): ?>
+                  <div id="main-menu" class="navigation">
+                    <?php print theme('links__system_main_menu', array(
+                      'links' => $main_menu,
+                      'attributes' => array(
+                        'id' => 'main-menu-links',
+                        'class' => array('links', 'clearfix'),
+                      ),
+                      'heading' => array(
+                        'text' => t('Main menu'),
+                        'level' => 'h4',
+                        'class' => array('element-invisible'),
+                      ),
+                    )); ?>
+                  </div> <!-- /#main-menu -->
+                <?php endif; ?>
+                <?php print render($page['header_intro']); ?>
+              </div>
+              <?php print render($page['header_intro_right']); ?>
             </div>
           </div>
         </div>
-        <?php print render($page['header_left']); ?>
+        <div class="header__language">
+          <i class="language-icon">icon</i>
+          <?php print render($page['header_left']); ?>
+        </div>
       </div>
       <div class="header__logo">
         <?php if ($logo): ?>

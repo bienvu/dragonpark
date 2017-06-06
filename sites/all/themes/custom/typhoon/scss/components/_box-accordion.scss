@@ -1,7 +1,6 @@
 .box-accordion {
   &__item {
     border-bottom: 1px solid $gray-dd;
-    padding-bottom: 10px;
 
     &:last-child {
       border: 0;
@@ -12,26 +11,31 @@
   &__question {
     color: $gray-2e;
     cursor: pointer;
-    font-size: 18px;
-    padding: 15px 40px 18px 0;
+    font-size: 17px;
+    padding: 12px 40px 12px 0;
     position: relative;
     text-transform: capitalize;
-
-    @include susy-media(desktop) {
-      font-size: 22px;
-    }
+    @include SanFranciscoDisplay-Semibold;
 
     &:before {
       content: '\f107';
       display: inline-block;
       font-family: 'FontAwesome';
-      font-size: 28px;
+      font-size: 20px;
       font-weight: bold;
       position: absolute;
       right: 18px;
       top: 50%;
       // transform: translate(0, -50%);
       margin-top: -20px;
+    }
+
+    &:hover {
+      color: $red-ee;
+    }
+
+    &.is-active {
+
     }
   }
 

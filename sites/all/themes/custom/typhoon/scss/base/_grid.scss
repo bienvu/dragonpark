@@ -88,6 +88,9 @@ $susy-media: (
   desktop: em($desktop) * 1em,
 
   // min-width: 1999px
+  desktop-large: em($container-desktop) * 1em,
+
+  // min-width: 1999px
   desktop-wide: em($desktop-superwide) * 1em,
 );
 

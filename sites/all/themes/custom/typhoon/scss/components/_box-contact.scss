@@ -2,33 +2,25 @@
   text-align: center;
 
   &__title {
-    @extend .block-title;
-    font-size: 30px;
-    margin-bottom: 5px;
+    @include SanFranciscoDisplay-Semibold;
+    font-size: 24px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   &__info {
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 20px;
-    text-align: center;
 
     @include susy-media(desktop) {
       padding: 0 28px;
-      text-align: left;
     }
 
     li {
       border-bottom: 1px dashed $gray-dd;
-      padding: 6px 0 7px;
-
-      @include susy-media(desktop) {
-        padding: 6px 0 7px 25px;
-      }
-
-      i {
-        min-width: 15px;
-      }
+      text-align: left;
+      padding: 5px 0;
     }
   }
 

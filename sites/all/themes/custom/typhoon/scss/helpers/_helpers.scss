@@ -44,13 +44,14 @@
   }
 
   &-blue {
-    background: url('../images/bg-blue-icon.png') no-repeat scroll bottom center $primary-color;
+    background: url('../images/dragon.png') no-repeat scroll bottom center #FFDE00;
     border-radius: 4px;
     padding: 38px 12px;
   }
 
   &-image {
-    background: url('../images/bg-blue-icon.png') no-repeat scroll bottom center transparent;
+    //background: url('../images/bg-blue-icon.png') no-repeat scroll bottom center transparent;
+    background-color: #fff;
     border-radius: 4px;
     border: 1px solid $gray-dd;
     margin-bottom: 35px;
@@ -127,5 +128,25 @@
 
   table {
     display: none;
+  }
+}
+
+.paragraphs-item-basic-content {
+  .field-items {
+    @include susy-media(tablet) {
+      display: flex;
+    }
+  }
+
+  .field-item + .field-item {
+    @include susy-media(tablet) {
+      margin-left: 20px;
+    }
+  }
+
+  .field-name-field-basic-body {
+    .field-items {
+      display: block;
+    }
   }
 }

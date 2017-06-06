@@ -90,8 +90,10 @@
       font-size: 0;
       min-width: inherit;
       border: 0;
-      background: url('../images/btn-direct.png') no-repeat scroll 0 0 transparent;
+      background: url('../images/icon/btn-direct.png') no-repeat scroll 0 0 transparent;
       float: left;
+      height: 40px;
+      background-size: 100% auto;
 
       @include susy-media(mobileOnly) {
         left: 50%;
@@ -99,7 +101,7 @@
       }
 
       &:hover {
-        background-image: url('../images/btn-direct-hover.png');
+        background-image: url('../images/icon/btn-direct-hover.png');
       }
 
       @include susy-media(tablet) {

@@ -10,7 +10,7 @@
 
 //Enable font-smoothing
 html {
-  @include utmavo;
+  @include SanFranciscoDisplay-Regular;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: $text-color;
@@ -23,7 +23,8 @@ body {
   // Disable in production mode;
   // @include show-breakpoints;
   text-size-adjust: none;
-  font-size: 13px;
+  font-size: 16px;
+  background-color: #fafafa;
 }
 
 .page {
@@ -39,12 +40,18 @@ body {
   }
 }
 
+.page-taxonomy-term {
+  .tabs {
+    display: none;
+  }
+}
+
 .main-content {
-  min-height: 400px;
-  padding: 30px 0 20px;
+  padding: 20px 0 0;
 
   @include susy-media(tablet) {
-    padding: 44px 0 50px;
+    min-height: 400px;
+    padding: 30px 0 0;
   }
 
   .main-content {
@@ -76,7 +83,7 @@ body {
     }
 
     .field-name-body {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
   }
 
@@ -110,7 +117,7 @@ body {
   }
 
   .field-name-body {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 

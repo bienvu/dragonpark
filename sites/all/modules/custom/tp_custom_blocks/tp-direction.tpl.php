@@ -15,7 +15,7 @@
   <div class="box-map-search row">
     <div class="box-map-search__form-group">
       <?php print drupal_render($form); ?>
-      <span>Typhoon, Ha Long, Quang Ninh</span>
+      <span>Dragon Park, Ha Long, Quang Ninh</span>
     </div>
     <a href="#" class="show-current-position"><i class="fa fa-crosshairs"></i></a>
   </div>

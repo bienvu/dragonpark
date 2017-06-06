@@ -22,14 +22,14 @@ $height-default-search-desktop: rem(35px);
       display: block;
       left: -45px;
       right: inherit;
-      width: 250px;
+      width: 235px;
 
       .form-text {
-        border-color: $gray;
+        border-color: #F5F7F9;
         padding-left: $width-default-search-desktop;
         font-size: 14px;
-        background: rgba($black, .5);
-        color: $white;
+        background: rgba($white, .8);
+        color: #555;
       }
 
       &:before {
@@ -54,7 +54,7 @@ $height-default-search-desktop: rem(35px);
   }
 
   .form-text {
-    color: $white;
+    color: #555;
     width: 100%;
     background: none;
     min-height: inherit;
@@ -63,10 +63,11 @@ $height-default-search-desktop: rem(35px);
     box-shadow: none;
     padding: 3px 10px 5px 40px;
     border-radius: 20px;
+    font-weight: bold;
 
     &:focus,
     &:active {
-      color: $white;
+      color: #555;
     }
 
     @include susy-media(mobileOnly) {
@@ -93,7 +94,6 @@ $height-default-search-desktop: rem(35px);
     left: 0;
 
     &:before {
-      color: $white;
       content:"\f002";
       font-family: 'FontAwesome';
       font-size: rem(14px);
@@ -107,6 +107,7 @@ $height-default-search-desktop: rem(35px);
       width: 100%;
 
       @include susy-media(tablet) {
+        color: $white;
         background: #fed217;
         border-radius: 100%;
         display: inline-block;

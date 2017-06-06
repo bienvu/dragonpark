@@ -18,9 +18,7 @@
 
     &__title {
       color: $white;
-      font-size: 95px;
-      line-height: 80px;
-      max-width: 380px;
+      max-width: 400px;
       margin: 0 auto 22px;
       letter-spacing: 1px;
     }
@@ -160,6 +158,11 @@
       @include susy-media(tablet) {
         display: inline-block;
       }
+
+      &:hover {
+        background: $white;
+        color: $primary-color;
+      }
     }
 
     .play-video {
@@ -197,11 +200,11 @@
     text-transform: uppercase;
 
     @include susy-media(tablet) {
-      font-size: 60px;
+      font-size: 50px;
     }
 
-    @include susy-media(desktop) {
-      font-size: 95px;
+    @include susy-media(1025px) {
+      font-size: 85px;
       line-height: 80px;
     }
   }

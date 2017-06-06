@@ -1,46 +1,25 @@
 .box-attractions {
   @extend %clearfix;
   clear: both;
-  margin-bottom: 27px;
+  margin-bottom: 10px;
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  &:nth-child(1) {
-    .block-title {
-      color: $orange-ff;
-    }
-  }
-
-  &:nth-child(2) {
-    .block-title {
-      color: $green;
-    }
-  }
-
   .block-title {
     position: relative;
     padding-left: 0;
-
-    &:before {
-      position: absolute;
-      top: 25px;
-      left: 0;
-      right: 0;
-      border-top: 1px solid $gray-da;
-      content: '';
-      width: 100%;
-    }
+    @include SanFranciscoDisplay-Medium;
+    font-size: 24px;
+    color: #2e2e2e;
+    margin-bottom: 15px;
 
     .content-number {
-      color: $gray-cd;
-      font-size: 18px;
       padding-left: 8px;
     }
 
     > span {
-      background: $white;
       padding: 10px 0;
       position: relative;
     }
@@ -52,7 +31,7 @@
     }
 
     @include susy-media(desktop) {
-      margin: 0 -15px;
+      margin: 0 -12px;
     }
   }
 
@@ -61,21 +40,21 @@
     margin-bottom: 26px;
     border-radius: 5px;
     overflow: hidden;
+    margin-bottom: 10px;
 
     @include susy-media(640px) {
-      margin: 0 10px;
+      margin: 0 10px 25px;
     }
 
     @include susy-media(tablet) {
       float: left;
-      margin: 0 15px;
+      margin: 0 12px 25px;
     }
   }
 
   &__image {
     border-radius: 4px;
     line-height: 1;
-    margin-bottom: 15px;
     overflow: hidden;
     position: relative;
 
@@ -89,11 +68,13 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 40px;
-      background: transparent url('../images/bg-content.png') repeat-x scroll center bottom / 100% 40px;
+      height: 100px;
+      background: url('../images/bg-event-title.png') repeat-x scroll 0 0 transparent;
       content: '';
       z-index: 1;
+      background-size: auto 100px;
     }
+
 
     &:hover {
       img {
@@ -117,7 +98,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px 20px;
+    padding: 12px 10px;
     z-index: 2;
     color: $white;
 
@@ -142,18 +123,19 @@
   }
 
   &__title {
-    @include utmavo-bold;
+    @include SanFranciscoDisplay-Medium;
     font-size: 16px;
-    text-transform: uppercase;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 
     a {
-      color: $text-color;
-
-      &:hover {
-        color: $primary-color;
-      }
+      color: $white;
     }
+  }
+
+  &__wrap {
+    @extend %clearfix;
+    font-size: 14px;
+    margin-top: 10px;
   }
 
   &__body,
@@ -196,7 +178,6 @@
 
     @include susy-media(mobileLandscape) {
       width: calc(100% - 70px);
-      margin-bottom: 41px;
     }
   }
 
